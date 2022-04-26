@@ -32,3 +32,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
