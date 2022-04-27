@@ -33,5 +33,18 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+Route::resource('productos', App\Http\Controllers\ProductoController::class);
+});
