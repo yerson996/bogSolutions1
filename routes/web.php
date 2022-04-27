@@ -48,3 +48,11 @@ Route::middleware([
 ])->group(function () {
 Route::resource('productos', App\Http\Controllers\ProductoController::class);
 });
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () { 
+Route::resource('remisiones', App\Http\Controllers\RemisioneController::class);
+});

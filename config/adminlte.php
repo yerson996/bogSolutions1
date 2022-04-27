@@ -252,7 +252,7 @@ return [
         ],
         [
             'text' => 'Remisiones',
-            'url'  => 'remision',
+            'url'  => 'remisiones',
             'icon' => 'fas fa-receipt',
         ],
     ],
