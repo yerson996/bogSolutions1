@@ -7,6 +7,7 @@ use App\Models\Cliente;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 /**
  * Class RemisioneController
@@ -65,8 +66,23 @@ class RemisioneController extends Controller
     public function show($id)
     {
         $remisione = Remisione::find($id);
-
+        
         return view('remisione.show', compact('remisione'));
+    }
+
+        /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function createPDF(){
+        //Recuperar todos los productos de la db
+
+        $remisione = Remisione::find($id);
+        view()->share('remisiones', $remisione);
+        $pdf = PDF::loadView('show', $remisione);
+        return $pdf->download('remisione.pdf');
     }
 
     /**
@@ -112,4 +128,5 @@ class RemisioneController extends Controller
         return redirect()->route('remisiones.index')
             ->with('success', 'Remisione deleted successfully');
     }
+    
 }
