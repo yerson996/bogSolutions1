@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Remisione;
+use App\Models\Cliente;
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class RemisioneController
@@ -32,7 +35,9 @@ class RemisioneController extends Controller
     public function create()
     {
         $remisione = new Remisione();
-        return view('remisione.create', compact('remisione'));
+        $clientes = Cliente::pluck('tipoDoc','id','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
+        $productos = Producto::pluck('item','id','nombre','precio');
+        return view('remisione.create', compact('remisione','clientes','productos'));
     }
 
     /**
@@ -73,8 +78,9 @@ class RemisioneController extends Controller
     public function edit($id)
     {
         $remisione = Remisione::find($id);
-
-        return view('remisione.edit', compact('remisione'));
+        $clientes = Cliente::pluck('tipoDoc','id','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
+        $productos = Producto::pluck('item','id','nombre','precio');
+        return view('remisione.edit', compact('remisione','clientes','productos'));
     }
 
     /**

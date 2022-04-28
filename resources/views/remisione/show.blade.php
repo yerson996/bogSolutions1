@@ -7,6 +7,61 @@
 @stop
 
 @section('content')
+<style>
+    .clase_table {
+  border-collapse: separate;
+  border-spacing: 10;
+  border: 1px solid black;
+  border-radius: 15px;
+  -moz-border-radius: 20px;
+  padding: 2px;
+}
+</style>
+
+<?php
+
+use Illuminate\Support\Facades\DB;
+//$C1 = DB::select("SELECT item, precio FROM productos WHERE item=$remisione->item1");
+
+$C1 = DB::table('productos')->where('id', $remisione->item1)->value("precio");
+$C2 = DB::table('productos')->where('id', $remisione->item2)->value("precio");
+$C3 = DB::table('productos')->where('id', $remisione->item3)->value("precio");
+$C4 = DB::table('productos')->where('id', $remisione->item4)->value("precio");
+$C5 = DB::table('productos')->where('id', $remisione->item5)->value("precio");
+$C6 = DB::table('productos')->where('id', $remisione->item6)->value("precio");
+$C7 = DB::table('productos')->where('id', $remisione->item7)->value("precio");
+$C8 = DB::table('productos')->where('id', $remisione->item8)->value("precio");
+$C9 = DB::table('productos')->where('id', $remisione->item9)->value("precio");
+$C10 = DB::table('productos')->where('id', $remisione->item10)->value("precio");
+$C11 = DB::table('productos')->where('id', $remisione->item11)->value("precio");
+$C12 = DB::table('productos')->where('id', $remisione->item12)->value("precio");
+$C13 = DB::table('productos')->where('id', $remisione->item13)->value("precio");
+$C14 = DB::table('productos')->where('id', $remisione->item14)->value("precio");
+$C15 = DB::table('productos')->where('id', $remisione->item15)->value("precio");
+
+$P1 = $C1 * $remisione->cant1;
+$P2 = $C2 * $remisione->cant2;
+$P3 = $C3 * $remisione->cant3;
+$P4 = $C4 * $remisione->cant4;
+$P5 = $C5 * $remisione->cant5;
+$P6 = $C6 * $remisione->cant6;
+$P7 = $C7 * $remisione->cant7;
+$P8 = $C8 * $remisione->cant8;
+$P9 = $C9 * $remisione->cant9;
+$P10 = $C10 * $remisione->cant10;
+$P11 = $C11 * $remisione->cant11;
+$P12 = $C12 * $remisione->cant12;
+$P13 = $C13 * $remisione->cant13;
+$P14 = $C14 * $remisione->cant14;
+$P15 = $C15 * $remisione->cant15;
+
+$Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
+
+
+
+
+?>
+
 <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -152,9 +207,32 @@
                         </div>
                         <div class="form-group">
                             <strong>Precio:</strong>
-                            {{ $remisione->precio }}
+                            ${{ number_format($Total, 2) }}
                         </div>
-
+                        <table class="clase_table">
+                    <tr>
+                        <td><b>R.U.C.:</b>prueba</td>
+                    </tr>
+                    <tr >
+                        <td><b>FACTURA:</b>prueba </td>
+                    </tr>
+                    <tr>
+                        <td><b>NÚMERO DE AUTORIZACIÓN:</b><br>prueba</td>
+                    </tr>
+                    <tr>
+                        <td><b>FECHA Y HORA DE AUTORIZACIÓN:</b></td>
+                    </tr>
+                    <tr>
+                        <td ><b>AMBIENTE:</b> PRUEBAS</td>
+                    </tr>
+                    <tr>
+                        <td><b>EMISIÓN:</b> NORMAL</td>
+                    </tr>
+                    <tr>
+                        <td ><b>CLAVE DE ACCESO:</b><br>prueba</td>
+                    </tr>
+                   
+                </table>
                     </div>
                 </div>
             </div>
@@ -169,3 +247,4 @@
 @section('js')
     <script> console.log('Hi!'); </script>
 @stop
+

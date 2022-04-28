@@ -35,6 +35,14 @@ class Producto extends Model
      */
     protected $fillable = ['item','nombre','precio'];
 
+    	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function remisiones()
+	{
+		return $this->hasMany('App\Models\Remisione','id','item','nombre','precio');
+	}
+
 
 
 }

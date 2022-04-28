@@ -52,6 +52,12 @@ class Cliente extends Model
      */
     protected $fillable = ['persona','tipoDoc','id','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','cel','correo'];
 
-
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function remisiones()
+	{
+		return $this->hasMany('App\Models\Remisione','persona','tipoDoc','id','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','cel','correo');
+	}
 
 }

@@ -69,7 +69,7 @@ class Remisione extends Model
     static $rules = [
 		'doc' => 'required',
 		'item1' => 'required',
-		'cant1' => 'required',
+        'cant1' => 'required',
 		'item2' => 'required',
 		'cant2' => 'required',
 		'item3' => 'required',
