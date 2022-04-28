@@ -35,6 +35,7 @@ class RemisioneController extends Controller
      */
     public function create()
     {
+        //prueba
         $remisione = new Remisione();
         $clientes = Cliente::pluck('tipoDoc','id','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
         $productos = Producto::pluck('item','id','nombre','precio');
