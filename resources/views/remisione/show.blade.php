@@ -8,20 +8,133 @@
 
 @section('content')
 <style>
-    .clase_table {
+.clase_table{
   border-collapse: separate;
   border-spacing: 10;
-  border: 1px solid black;
+  border: 4px double gray;
   border-radius: 15px;
   -moz-border-radius: 20px;
-  padding: 2px;
+  padding: 5px;
+  text-align: center;
 }
+
+.clase {
+  border-collapse: separate;
+  border-spacing: 2;
+  border: 2px solid gray;
+  border-radius: 2px;
+  padding: 5px;
+
+}
+
+.linea {
+    border: 3px solid;
+}
+
+
+
+#col1 {
+float: left;
+width: 28%;
+margin-right: 0.5em;
+margin-bottom: 1em;
+}
+
+#col2 {
+float: left;
+width: 20%;
+margin-right: 1em;
+margin-bottom: 1em;
+}
+
+#col3 {
+float: right;
+width: 28%;
+margin-right: 0.5em;
+margin-bottom: 1em;
+}
+
+#col4 {
+float: right;
+width: 20%;
+margin-right: 1em;
+margin-bottom: 1em;
+}
+
+#izq {
+float: left;
+width: 48.5%;
+margin-right: 1em;
+margin-bottom: 1em;
+}
+
+#der {
+float: right;
+width: 48.5%;
+margin-right: 1em;
+margin-bottom: 1em;
+}
+
+#center
+{
+    align: center;
+    text-align: center;
+    width: "100%";
+}
+
+#W70
+{
+    width: 70%;
+}
+
+#W20
+{
+    width: 20%;
+}
+#W10
+{
+    width: 10%;
+}
+#W35
+{
+    width: 35%;
+}
+
+#first
+{
+    align: center;
+    text-align: center;
+    width: "100%";
+    background-color: #e6e6e6;
+}
+
+.tables td, .tables th {
+  padding: 0.4rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  text-align: center;
+}
+
+
+
+
 </style>
 
 <?php
 
 use Illuminate\Support\Facades\DB;
-//$C1 = DB::select("SELECT item, precio FROM productos WHERE item=$remisione->item1");
+
+$nombreLegal=DB::table('clientes')->where('id', $remisione->doc)->value('nombreLegal');
+$nombre1=DB::table('clientes')->where('id', $remisione->doc)->value('nombre1');
+$nombre2=DB::table('clientes')->where('id', $remisione->doc)->value('nombre2');
+$apellido1=DB::table('clientes')->where('id', $remisione->doc)->value('apellido1');
+$apellido2=DB::table('clientes')->where('id', $remisione->doc)->value('apellido2');
+$direccion=DB::table('clientes')->where('id', $remisione->doc)->value('direccion');
+$ciudad=DB::table('clientes')->where('id', $remisione->doc)->value('ciudad');
+$cel=DB::table('clientes')->where('id', $remisione->doc)->value('cel');
+$correo=DB::table('clientes')->where('id', $remisione->doc)->value('correo');
+$tipoDoc=DB::table('clientes')->where('id', $remisione->doc)->value('tipoDoc');
 
 $C1 = DB::table('productos')->where('id', $remisione->item1)->value("precio");
 $C2 = DB::table('productos')->where('id', $remisione->item2)->value("precio");
@@ -38,6 +151,38 @@ $C12 = DB::table('productos')->where('id', $remisione->item12)->value("precio");
 $C13 = DB::table('productos')->where('id', $remisione->item13)->value("precio");
 $C14 = DB::table('productos')->where('id', $remisione->item14)->value("precio");
 $C15 = DB::table('productos')->where('id', $remisione->item15)->value("precio");
+
+$I1 = DB::table('productos')->where('id', $remisione->item1)->value("item");
+$I2 = DB::table('productos')->where('id', $remisione->item2)->value("item");
+$I3 = DB::table('productos')->where('id', $remisione->item3)->value("item");
+$I4 = DB::table('productos')->where('id', $remisione->item4)->value("item");
+$I5 = DB::table('productos')->where('id', $remisione->item5)->value("item");
+$I6 = DB::table('productos')->where('id', $remisione->item6)->value("item");
+$I7 = DB::table('productos')->where('id', $remisione->item7)->value("item");
+$I8 = DB::table('productos')->where('id', $remisione->item8)->value("item");
+$I9 = DB::table('productos')->where('id', $remisione->item9)->value("item");
+$I10 = DB::table('productos')->where('id', $remisione->item10)->value("item");
+$I11 = DB::table('productos')->where('id', $remisione->item11)->value("item");
+$I12 = DB::table('productos')->where('id', $remisione->item12)->value("item");
+$I13 = DB::table('productos')->where('id', $remisione->item13)->value("item");
+$I14 = DB::table('productos')->where('id', $remisione->item14)->value("item");
+$I15 = DB::table('productos')->where('id', $remisione->item15)->value("item");
+
+$N1 = DB::table('productos')->where('id', $remisione->item1)->value("nombre");
+$N2 = DB::table('productos')->where('id', $remisione->item2)->value("nombre");
+$N3 = DB::table('productos')->where('id', $remisione->item3)->value("nombre");
+$N4 = DB::table('productos')->where('id', $remisione->item4)->value("nombre");
+$N5 = DB::table('productos')->where('id', $remisione->item5)->value("nombre");
+$N6 = DB::table('productos')->where('id', $remisione->item6)->value("nombre");
+$N7 = DB::table('productos')->where('id', $remisione->item7)->value("nombre");
+$N8 = DB::table('productos')->where('id', $remisione->item8)->value("nombre");
+$N9 = DB::table('productos')->where('id', $remisione->item9)->value("nombre");
+$N10 = DB::table('productos')->where('id', $remisione->item10)->value("nombre");
+$N11 = DB::table('productos')->where('id', $remisione->item11)->value("nombre");
+$N12 = DB::table('productos')->where('id', $remisione->item12)->value("nombre");
+$N13 = DB::table('productos')->where('id', $remisione->item13)->value("nombre");
+$N14 = DB::table('productos')->where('id', $remisione->item14)->value("nombre");
+$N15 = DB::table('productos')->where('id', $remisione->item15)->value("nombre");
 
 $P1 = $C1 * $remisione->cant1;
 $P2 = $C2 * $remisione->cant2;
@@ -57,11 +202,8 @@ $P15 = $C15 * $remisione->cant15;
 
 $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
 
-
-
-
 ?>
-
+                
 <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -74,170 +216,433 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <a class="btn btn-primary" href="{{ route('remisiones.index') }}"> Volver</a>
                         </div>
                     </div>
+            <div class="containter">
+            <img id="izq" style="padding: 0px 0px 0px 2rem;" src="http://localhost:8000/logo.jpeg">
+ 
 
-                    <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Doc:</strong>
-                            {{ $remisione->doc }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item1:</strong>
-                            {{ $remisione->item1 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant1:</strong>
-                            {{ $remisione->cant1 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item2:</strong>
-                            {{ $remisione->item2 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant2:</strong>
-                            {{ $remisione->cant2 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item3:</strong>
-                            {{ $remisione->item3 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant3:</strong>
-                            {{ $remisione->cant3 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item4:</strong>
-                            {{ $remisione->item4 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant4:</strong>
-                            {{ $remisione->cant4 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item5:</strong>
-                            {{ $remisione->item5 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant5:</strong>
-                            {{ $remisione->cant5 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item6:</strong>
-                            {{ $remisione->item6 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant6:</strong>
-                            {{ $remisione->cant6 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item7:</strong>
-                            {{ $remisione->item7 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant7:</strong>
-                            {{ $remisione->cant7 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item8:</strong>
-                            {{ $remisione->item8 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant8:</strong>
-                            {{ $remisione->cant8 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item9:</strong>
-                            {{ $remisione->item9 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant9:</strong>
-                            {{ $remisione->cant9 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item10:</strong>
-                            {{ $remisione->item10 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant10:</strong>
-                            {{ $remisione->cant10 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item11:</strong>
-                            {{ $remisione->item11 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant11:</strong>
-                            {{ $remisione->cant11 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item12:</strong>
-                            {{ $remisione->item12 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant12:</strong>
-                            {{ $remisione->cant12 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item13:</strong>
-                            {{ $remisione->item13 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant13:</strong>
-                            {{ $remisione->cant13 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item14:</strong>
-                            {{ $remisione->item14 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant14:</strong>
-                            {{ $remisione->cant14 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Item15:</strong>
-                            {{ $remisione->item15 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cant15:</strong>
-                            {{ $remisione->cant15 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Notas:</strong>
-                            {{ $remisione->notas }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Precio:</strong>
-                            ${{ number_format($Total, 2) }}
-                        </div>
-                        <table class="clase_table">
-                    <tr>
-                        <td><b>R.U.C.:</b>prueba</td>
-                    </tr>
-                    <tr >
-                        <td><b>FACTURA:</b>prueba </td>
-                    </tr>
-                    <tr>
-                        <td><b>NÚMERO DE AUTORIZACIÓN:</b><br>prueba</td>
-                    </tr>
-                    <tr>
-                        <td><b>FECHA Y HORA DE AUTORIZACIÓN:</b></td>
-                    </tr>
-                    <tr>
-                        <td ><b>AMBIENTE:</b> PRUEBAS</td>
-                    </tr>
-                    <tr>
-                        <td><b>EMISIÓN:</b> NORMAL</td>
-                    </tr>
-                    <tr>
-                        <td ><b>CLAVE DE ACCESO:</b><br>prueba</td>
-                    </tr>
-                   
+            <table id="der">
+                <td>
+                    <tr>&nbsp;</tr>
+                    <tr><h1 style="text-align: center; font-weight: 1000;">REMISIÓN</h1>
+                        <h2 style="text-align: center;">No. RM-{{$remisione->id}}</h2></tr>
+                    <tr>&nbsp;</tr>
+                </td>
+            </table>
+            </div>           
+
+                    
+
+        <div class="card-body">
+            <div class="form-group">
+
+                    <!--Tabla Cliente-->
+                    <table id="col1" class="clase_table table-striped table-hover" with="30%">
+                    <thead>
+                        <tr>
+                            <th id="center" colspan="4">CLIENTE</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <th id="center" colspan="4">&nbsp;</th>
+                        </tr>
+
+                        <tr>
+                            <th>Nombre:</th>
+                            <td colspan="3">
+                                <u>
+                                {{$nombre1}}
+                                {{$nombre2}}
+                                {{$apellido1}}
+                                {{$apellido2}}
+                                {{$nombreLegal}}
+                                </u>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Dirección:</th>
+                            <td colspan="3">  <u>{{ $direccion }}</u></td>
+                        </tr>
+                        <tr>
+                            <th>Ciudad:</th>
+                            <td><u>{{ $ciudad }}</u></td>
+                            <th>{{ $tipoDoc }}:</th>
+                            <td><u>{{ $remisione->doc }}</u></td>
+                        </tr>
+                        <tr>
+                            <th>Celular:</th>
+                            <td><u>{{ $cel }}</u></td>
+                            <th>Correo:</th>
+                            <td><u>{{ $correo }}</u></td>
+                        </tr>  
+                    </table>
+
+
+                <div class="form-group">
+                <table id="col2" class="clase_table table-striped table-hover" with="19%">
+                    <thead>
+                        <tr>
+                            <th id="center" colspan="2">DATOS DE ENTREGA</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <th>Fecha:</th>
+                            <td><u></u></td>
+                        </tr>
+                        <tr>
+                            <th>Dirección:</th>
+                            <td> <u></u></td>
+                        </tr>
+                        <tr>
+                            <th>Ciudad:</th>
+                            <td><u>{{ $ciudad }}</u></td>
+                        </tr>
+                        <tr>
+                            <th>Vencimiento:</th>
+                            <td><u></u></td>
+                        </tr>
+                        <tr>
+                            <th>Condición:</th>
+                            <td><u></u></td>
+                        </tr>
                 </table>
-                    </div>
-                </div>
+                
+                <div class="form-group">
+                <table id="col4" class="clase_table table-striped table-hover" with="30%">
+                    <thead>
+                        <tr>
+                            <th id="center" colspan="2">DATOS DE ENTREGA</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <th>Fecha:</th>
+                            <td><u></u></td>
+                        </tr>
+                        <tr>
+                            <th>Dirección:</th>
+                            <td> <u></u></td>
+                        </tr>
+                        <tr>
+                            <th>Ciudad:</th>
+                            <td><u>{{ $ciudad }}</u></td>
+                        </tr>
+                        <tr>
+                            <th>Vencimiento:</th>
+                            <td><u></u></td>
+                        </tr>
+                        <tr>
+                            <th>Condición:</th>
+                            <td><u></u></td>
+                        </tr>
+                </table>
+
+                    <!--Tabla Cliente-->
+                    
+                    <table id="col3" class="clase_table table-striped table-hover" with="30%">
+                    <thead>
+                        <tr>
+                            <th id="center" colspan="4">CLIENTE</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <th id="center" colspan="4">&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <th>Nombre:</th>
+                            <td colspan="3">
+                                <u>
+                                {{$nombre1}}
+                                {{$nombre2}}
+                                {{$apellido1}}
+                                {{$apellido2}}
+                                {{$nombreLegal}}
+                                </u>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Dirección:</th>
+                            <td colspan="3">  <u>{{ $direccion }}</u></td>
+                        </tr>
+                        <tr>
+                            <th>Ciudad:</th>
+                            <td><u>{{ $ciudad }}</u></td>
+                            <th>{{ $tipoDoc }}:</th>
+                            <td><u>{{ $remisione->doc }}</u></td>
+                        </tr>
+                        <tr>
+                            <th>Celular:</th>
+                            <td><u>{{ $cel }}</u></td>
+                            <th>Correo:</th>
+                            <td><u>{{ $correo }}</u></td>
+                        </tr>  
+                    </table>
             </div>
-        </div>
+                <!-- Izquierda -->
+
+                <table id="izq" class="clase tables" with="30%">
+                <thead>
+                        <tr>
+                            <th id="first">Item</th>
+                            <th id="first">Descripción</th>
+                            <th id="first">Cant.</th>
+                            <th id="first">Valor U. Nto</th>
+                            <th id="first">Valor Total</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td>{{ $I1 }}</td>
+                            <td>{{ $N1 }}</td>
+                            <td>{{ $remisione->cant1 }}</td>
+                            <td>{{ $C1 }}</td>
+                            <td>{{ $P1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I2 }}</td>
+                            <td>{{ $N2 }}</td>
+                            <td>{{ $remisione->cant2 }}</td>
+                            <td>{{ $C2 }}</td>
+                            <td>{{ $P2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I3 }}</td>
+                            <td>{{ $N3 }}</td>
+                            <td>{{ $remisione->cant3 }}</td>
+                            <td>{{ $C3 }}</td>
+                            <td>{{ $P3 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I4 }}</td>
+                            <td>{{ $N4 }}</td>
+                            <td>{{ $remisione->cant4 }}</td>
+                            <td>{{ $C4 }}</td>
+                            <td>{{ $P4 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I5 }}</td>
+                            <td>{{ $N5 }}</td>
+                            <td>{{ $remisione->cant5 }}</td>
+                            <td>{{ $C5 }}</td>
+                            <td>{{ $P5 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I6 }}</td>
+                            <td>{{ $N6 }}</td>
+                            <td>{{ $remisione->cant6 }}</td>
+                            <td>{{ $C6 }}</td>
+                            <td>{{ $P6 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I7 }}</td>
+                            <td>{{ $N7 }}</td>
+                            <td>{{ $remisione->cant7 }}</td>
+                            <td>{{ $C7 }}</td>
+                            <td>{{ $P7 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I8 }}</td>
+                            <td>{{ $N8 }}</td>
+                            <td>{{ $remisione->cant8 }}</td>
+                            <td>{{ $C8 }}</td>
+                            <td>{{ $P8 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I9 }}</td>
+                            <td>{{ $N9 }}</td>
+                            <td>{{ $remisione->cant9 }}</td>
+                            <td>{{ $C9 }}</td>
+                            <td>{{ $P9 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I10 }}</td>
+                            <td>{{ $N10 }}</td>
+                            <td>{{ $remisione->cant10 }}</td>
+                            <td>{{ $C10 }}</td>
+                            <td>{{ $P10 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I11 }}</td>
+                            <td>{{ $N11 }}</td>
+                            <td>{{ $remisione->cant11 }}</td>
+                            <td>{{ $C11 }}</td>
+                            <td>{{ $P11 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I12 }}</td>
+                            <td>{{ $N12 }}</td>
+                            <td>{{ $remisione->cant12 }}</td>
+                            <td>{{ $C12 }}</td>
+                            <td>{{ $P12 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I13 }}</td>
+                            <td>{{ $N13 }}</td>
+                            <td>{{ $remisione->cant13 }}</td>
+                            <td>{{ $C13 }}</td>
+                            <td>{{ $P13 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I14 }}</td>
+                            <td>{{ $N14 }}</td>
+                            <td>{{ $remisione->cant14 }}</td>
+                            <td>{{ $C14 }}</td>
+                            <td>{{ $P14 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I15 }}</td>
+                            <td>{{ $N15 }}</td>
+                            <td>{{ $remisione->cant15 }}</td>
+                            <td>{{ $C15 }}</td>
+                            <td>{{ $P15 }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Notas: {{$remisione->notas}}</td>
+                            <td id="first">Total</td>
+                            <td colspan="2">${{ number_format($Total, 2) }}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="height: 120px;">Firma Autorizada:</th>
+                            <th colspan="4" style="height: 120px;">Recibido cliente:</th>
+                        </tr>
+                        <tr>
+                            <th colspan="10">GRACIAS POR CONFIAR EN NOSOTROS</th>
+                        </tr>
+                    </table>
+
+                <!-- Derecha -->
+                <table id="der" class="clase tables" with="30%">
+                    <thead>
+                        <tr>
+                            <th id="first">Item</th>
+                            <th id="first">Descripción</th>
+                            <th id="first">Cant.</th>
+                            <th id="first">Valor U. Nto</th>
+                            <th id="first">Valor Total</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td>{{ $I1 }}</td>
+                            <td>{{ $N1 }}</td>
+                            <td>{{ $remisione->cant1 }}</td>
+                            <td>{{ $C1 }}</td>
+                            <td>{{ $P1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I2 }}</td>
+                            <td>{{ $N2 }}</td>
+                            <td>{{ $remisione->cant2 }}</td>
+                            <td>{{ $C2 }}</td>
+                            <td>{{ $P2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I3 }}</td>
+                            <td>{{ $N3 }}</td>
+                            <td>{{ $remisione->cant3 }}</td>
+                            <td>{{ $C3 }}</td>
+                            <td>{{ $P3 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I4 }}</td>
+                            <td>{{ $N4 }}</td>
+                            <td>{{ $remisione->cant4 }}</td>
+                            <td>{{ $C4 }}</td>
+                            <td>{{ $P4 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I5 }}</td>
+                            <td>{{ $N5 }}</td>
+                            <td>{{ $remisione->cant5 }}</td>
+                            <td>{{ $C5 }}</td>
+                            <td>{{ $P5 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I6 }}</td>
+                            <td>{{ $N6 }}</td>
+                            <td>{{ $remisione->cant6 }}</td>
+                            <td>{{ $C6 }}</td>
+                            <td>{{ $P6 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I7 }}</td>
+                            <td>{{ $N7 }}</td>
+                            <td>{{ $remisione->cant7 }}</td>
+                            <td>{{ $C7 }}</td>
+                            <td>{{ $P7 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I8 }}</td>
+                            <td>{{ $N8 }}</td>
+                            <td>{{ $remisione->cant8 }}</td>
+                            <td>{{ $C8 }}</td>
+                            <td>{{ $P8 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I9 }}</td>
+                            <td>{{ $N9 }}</td>
+                            <td>{{ $remisione->cant9 }}</td>
+                            <td>{{ $C9 }}</td>
+                            <td>{{ $P9 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I10 }}</td>
+                            <td>{{ $N10 }}</td>
+                            <td>{{ $remisione->cant10 }}</td>
+                            <td>{{ $C10 }}</td>
+                            <td>{{ $P10 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I11 }}</td>
+                            <td>{{ $N11 }}</td>
+                            <td>{{ $remisione->cant11 }}</td>
+                            <td>{{ $C11 }}</td>
+                            <td>{{ $P11 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I12 }}</td>
+                            <td>{{ $N12 }}</td>
+                            <td>{{ $remisione->cant12 }}</td>
+                            <td>{{ $C12 }}</td>
+                            <td>{{ $P12 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I13 }}</td>
+                            <td>{{ $N13 }}</td>
+                            <td>{{ $remisione->cant13 }}</td>
+                            <td>{{ $C13 }}</td>
+                            <td>{{ $P13 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I14 }}</td>
+                            <td>{{ $N14 }}</td>
+                            <td>{{ $remisione->cant14 }}</td>
+                            <td>{{ $C14 }}</td>
+                            <td>{{ $P14 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ $I15 }}</td>
+                            <td>{{ $N15 }}</td>
+                            <td>{{ $remisione->cant15 }}</td>
+                            <td>{{ $C15 }}</td>
+                            <td>{{ $P15 }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Notas: {{$remisione->notas}}</td>
+                            <td id="first">Total</td>
+                            <td colspan="2">${{ number_format($Total, 2) }}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="height: 120px;">Firma Autorizada:</th>
+                            <th colspan="4" style="height: 120px;">Recibido cliente:</th>
+                        </tr>
+                        <tr>
+                            <th colspan="10">GRACIAS POR CONFIAR EN NOSOTROS</th>
+                        </tr>
+                    </table>
+            </div>
+            </div>
+            </div>
+                
+
     </section>
+                    
 @stop
 
 @section('css')
