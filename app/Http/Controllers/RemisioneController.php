@@ -15,6 +15,14 @@ use PDF;
  */
 class RemisioneController extends Controller
 {
+
+    public function byProject($id)
+    {
+        return Producto::where('id', $id)->get();
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -38,8 +46,8 @@ class RemisioneController extends Controller
     {
         //prueba 1
         $remisione = new Remisione();
-        $clientes = Cliente::pluck('id','id','tipoDoc','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
-        $productos = Producto::pluck('nombre','id','item','precio');
+        $clientes = Cliente::all();
+        $productos = Producto::all();
         return view('remisione.create', compact('remisione','clientes','productos'));
     }
 
@@ -56,7 +64,7 @@ class RemisioneController extends Controller
         $remisione = Remisione::create($request->all());
 
         return redirect()->route('remisiones.index')
-            ->with('success', 'Remisione created successfully.');
+            ->with('success', 'Remision creada correctamente.');
     }
 
     /**

@@ -33,12 +33,6 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 
-  .hidden
-  {
-
-  }
-
-
 
 </style>
 
@@ -46,19 +40,63 @@
     <div class="box-body">
         
         <div class="form-group">
+
+
+
+<br>
+            lo
             {{ Form::label('Documento') }} <br>
-            {{ Form::select('doc', $clientes ,$remisione->doc, ['class' => 'form-contro' . ($errors->has('doc') ? ' is-invalid' : ''), 'placeholder' => 'Doc']) }}
+            <select name="doc" class="form-contro">
+                @foreach($clientes as $cliente)
+                <option value="{{ $cliente->id }}">{{ $cliente->id }} | {{ $cliente->nombre1 }}{{ $cliente->nombre2 }}{{ $cliente->apellido1 }}{{ $cliente->apellido2 }}{{ $cliente->nombreLegal }}</option>
+                @endforeach                
+            </select>
             {!! $errors->first('doc', '<div class="invalid-feedback">:message</div>') !!}
 
             {{ $remisione->nombre1 }}
         </div>
         <div class="form-group">
             {{ Form::label('item1')}} <br>
-            {{ Form::select('item1',$productos, $remisione->item1, ['class' => 'form-contro' . ($errors->has('item1') ? ' is-invalid' : ''), 'placeholder' => 'Item1']) }}
 
+
+
+
+            
         
             {{ Form::text('cant1', $remisione->cant1, ['class' => 'form-cant' . ($errors->has('cant1') ? ' is-invalid' : ''), 'placeholder' => 'Cant1']) }}
             {!! $errors->first('cant1', '<div class="invalid-feedback">:message</div>') !!}
+
+            <select id="item1" name="item1" class="form-contro">
+                <option value="0" data-precio="--" selected disabled>--Seleccione producto--</option>
+                @foreach($productos as $producto)
+                <option value="{{ $producto->id }}" data-precio="{{ $producto->precio }}">{{ $producto->item}} | {{ $producto->nombre }} - {{ $producto->precio }}</option>      
+                @endforeach
+            </select>
+
+                <input name="precio1" id="precio1" type="number" placeholder="Precio item 1"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
         </div>
         <div class="form-group">
             {{ Form::label('item2') }} <br>
@@ -196,6 +234,8 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </div>
+
+

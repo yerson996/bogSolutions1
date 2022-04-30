@@ -36,5 +36,22 @@
 @stop
 
 @section('js')
-    const csrfToken = document.head.querySelector("[name]")
+<script>
+document.getElementById('item1').onchange = function() {
+  /* Referencia al option seleccionado */
+  var mOption = this.options[this.selectedIndex];
+  /* Referencia a los atributos data de la opción seleccionada */
+  var mData = mOption.dataset;
+
+  /* Referencia a los input */
+
+  var Precio = document.getElementById('precio1');
+
+  /* Asignamos cada dato a su input*/
+  Precio.value = mData.precio;
+
+
+
+};
+</script>
 @stop
