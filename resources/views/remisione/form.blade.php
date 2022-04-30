@@ -47,8 +47,10 @@
         
         <div class="form-group">
             {{ Form::label('Documento') }} <br>
-            {{ Form::text('doc', $remisione->doc, ['class' => 'form-contro' . ($errors->has('doc') ? ' is-invalid' : ''), 'placeholder' => 'Doc']) }}
+            {{ Form::select('doc', $clientes ,$remisione->doc, ['class' => 'form-contro' . ($errors->has('doc') ? ' is-invalid' : ''), 'placeholder' => 'Doc']) }}
             {!! $errors->first('doc', '<div class="invalid-feedback">:message</div>') !!}
+
+            {{ $remisione->nombre1 }}
         </div>
         <div class="form-group">
             {{ Form::label('item1')}} <br>

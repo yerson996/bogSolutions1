@@ -36,5 +36,5 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    const csrfToken = document.head.querySelector("[name]")
 @stop

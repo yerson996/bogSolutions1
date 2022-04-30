@@ -1,12 +1,4 @@
-@extends('adminlte::page')
 
-@section('title', 'Imprimir [Ctrl+P]')
-
-@section('content_header')
-    <br>
-@stop
-
-@section('content')
 <style>
 .clase_table{
   border-collapse: separate;
@@ -30,7 +22,6 @@
 .linea {
     border: 3px solid;
 }
-
 
 
 #col1 {
@@ -75,6 +66,22 @@ margin-right: 1em;
 margin-bottom: 1em;
 }
 
+#izq1 {
+float: left;
+font-size: 30px; 
+font-weight: 1000;"
+margin-right: 1em;
+margin-bottom: 1em;
+}
+
+#der1 {
+float: right;
+font-size: 30px; 
+font-weight: 1000;"
+margin-right: 1em;
+margin-bottom: 1em;
+}
+
 #center
 {
     align: center;
@@ -115,6 +122,8 @@ margin-bottom: 1em;
   border-left: 1px solid #dee2e6;
   text-align: center;
 }
+
+
 
 
 
@@ -202,32 +211,27 @@ $P15 = $C15 * $remisione->cant15;
 $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
 
 ?>
-                
-<section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">Remision</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('remisiones.index') }}"> Volver</a>
-                        </div>
-                    </div>
-            <div class="containter">
-            <img id="izq" style="padding: 0px 0px 0px 2rem;" src="http://localhost:8000/logo.jpeg">
- 
 
-            <table id="der">
+            
+            
+
+
+            <table id="izq1" class="ini">
                 <td>
-                    <tr>&nbsp;</tr>
-                    <tr><h1 style="text-align: center; font-weight: 1000;">REMISIÓN</h1>
-                        <h2 style="text-align: center;">No. RM-{{$remisione->id}}</h2></tr>
-                    <tr>&nbsp;</tr>
+                    <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.jpeg"></tr>
+                    <tr><strong style="font-size: 25px;">REMISIÓN No. RM-{{$remisione->id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong></tr>
                 </td>
             </table>
-            </div>           
+
+            <table id="der1" class="ini">
+                <td>
+                    <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.jpeg"></tr>
+                    <tr>REMISIÓN No. RM-{{$remisione->id}}</tr>
+                </td>
+            </table>
+
+           
+
 
                     
 
@@ -642,13 +646,3 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
 
     </section>
                     
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
-

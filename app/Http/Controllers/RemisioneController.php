@@ -28,6 +28,7 @@ class RemisioneController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $remisiones->perPage());
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -37,8 +38,8 @@ class RemisioneController extends Controller
     {
         //prueba 1
         $remisione = new Remisione();
-        $clientes = Cliente::pluck('tipoDoc','id','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
-        $productos = Producto::pluck('item','id','nombre','precio');
+        $clientes = Cliente::pluck('id','id','tipoDoc','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
+        $productos = Producto::pluck('nombre','id','item','precio');
         return view('remisione.create', compact('remisione','clientes','productos'));
     }
 
@@ -95,7 +96,7 @@ class RemisioneController extends Controller
     public function edit($id)
     {
         $remisione = Remisione::find($id);
-        $clientes = Cliente::pluck('tipoDoc','id','nombre1','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
+        $clientes = Cliente::pluck('nombre1','id','tipoDoc','nombre2','apellido1','apellido2','nombreLegal','direccion','ciudad','celular','correo');
         $productos = Producto::pluck('item','id','nombre','precio');
         return view('remisione.edit', compact('remisione','clientes','productos'));
     }

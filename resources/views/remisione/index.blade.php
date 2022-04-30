@@ -58,7 +58,7 @@
 
                                             <td>
                                                 <form action="{{ route('remisiones.destroy',$remisione->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('remisiones.show',$remisione->id) }}"><i class="fa fa-fw fa-eye"></i> Ver e Imprimir</a>
+                                                    <a class="btn btn-sm btn-primary "  target="_blank" href="{{ route('remisiones.show',$remisione->id) }}"><i class="fa fa-fw fa-eye"></i>Imprimir</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('remisiones.edit',$remisione->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
