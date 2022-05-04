@@ -82,7 +82,7 @@
 
             <input class="form-cant" name="cant1" id="cant1" type="number" placeholder="Cantidad 1"/>
 
-            <input class="form-cant" name="tprecio1" id="tprecio1" type="number" placeholder="Total Item 1" readonly/>
+            <input class="form-cant" name="tprecio1" id="tprecio1" type="number" value="0" placeholder="Total Item 1" readonly/>
 
         </div>
 
@@ -104,7 +104,7 @@
             <input class="form-cant" name="cant2" id="cant2" type="number" placeholder="Cantidad 2"/>
             {!! $errors->first('cant2', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio2" id="tprecio2" type="number" placeholder="Total Item 2" readonly/>
+            <input class="form-cant" name="tprecio2" id="tprecio2" type="number" value="0" placeholder="Total Item 2" readonly/>
 
         </div>
 
@@ -125,7 +125,7 @@
             <input class="form-cant" name="cant3" id="cant3" type="number" placeholder="Cantidad 3"/>
             {!! $errors->first('cant3', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio3" id="tprecio3" type="number" placeholder="Total Item 3" readonly/>
+            <input class="form-cant" name="tprecio3" id="tprecio3" type="number" value="0" placeholder="Total Item 3" readonly/>
 
         </div>
 
@@ -146,7 +146,7 @@
             <input class="form-cant" name="cant4" id="cant4" type="number" placeholder="Cantidad 4"/>
             {!! $errors->first('cant4', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio4" id="tprecio4" type="number" placeholder="Total Item 4" readonly/>
+            <input class="form-cant" name="tprecio4" id="tprecio4" type="number" value="0" placeholder="Total Item 4" readonly/>
 
         </div>
 
@@ -167,7 +167,7 @@
             <input class="form-cant" name="cant5" id="cant5" type="number" placeholder="Cantidad 5"/>
             {!! $errors->first('cant5', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio5" id="tprecio5" type="number" placeholder="Total Item 5" readonly/>
+            <input class="form-cant" name="tprecio5" id="tprecio5" type="number" value="0" placeholder="Total Item 5" readonly/>
 
         </div>
 
@@ -188,7 +188,7 @@
             <input class="form-cant" name="cant6" id="cant6" type="number" placeholder="Cantidad 6"/>
             {!! $errors->first('cant6', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio6" id="tprecio6" type="number" placeholder="Total Item 6" readonly/>
+            <input class="form-cant" name="tprecio6" id="tprecio6" type="number" value="0" placeholder="Total Item 6" readonly/>
 
         </div>
 
@@ -209,7 +209,7 @@
             <input class="form-cant" name="cant7" id="cant7" type="number" placeholder="Cantidad 7"/>
             {!! $errors->first('cant7', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio7" id="tprecio7" type="number" placeholder="Total Item 7" readonly/>
+            <input class="form-cant" name="tprecio7" id="tprecio7" type="number" value="0" placeholder="Total Item 7" readonly/>
 
         </div>
 
@@ -230,7 +230,7 @@
             <input class="form-cant" name="cant8" id="cant8" type="number" placeholder="Cantidad 8"/>
             {!! $errors->first('cant8', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio8" id="tprecio8" type="number" placeholder="Total Item 8" readonly/>
+            <input class="form-cant" name="tprecio8" id="tprecio8" type="number" value="0" placeholder="Total Item 8" readonly/>
 
         </div>
 
@@ -251,7 +251,7 @@
             <input class="form-cant" name="cant9" id="cant9" type="number" placeholder="Cantidad 9"/>
             {!! $errors->first('cant9', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio9" id="tprecio9" type="number" placeholder="Total Item 9" readonly/>
+            <input class="form-cant" name="tprecio9" id="tprecio9" type="number"  value="0" placeholder="Total Item 9" readonly/>
 
         </div>
 
@@ -272,7 +272,7 @@
             <input class="form-cant" name="cant10" id="cant10" type="number" placeholder="Cantidad 10"/>
             {!! $errors->first('cant10', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio10" id="tprecio10" type="number" placeholder="Total Item 10" readonly/>
+            <input class="form-cant" name="tprecio10" id="tprecio10" type="number" value="0" placeholder="Total Item 10" readonly/>
 
         </div>
 
@@ -293,7 +293,7 @@
             <input class="form-cant" name="cant11" id="cant11" type="number" placeholder="Cantidad 11"/>
             {!! $errors->first('cant11', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio11" id="tprecio11" type="number" placeholder="Total Item 11" readonly/>
+            <input class="form-cant" name="tprecio11" id="tprecio11" type="number" value="0" placeholder="Total Item 11" readonly/>
 
         </div>
 
@@ -314,7 +314,7 @@
             <input class="form-cant" name="cant12" id="cant12" type="number" placeholder="Cantidad 12"/>
             {!! $errors->first('cant12', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio12" id="tprecio12" type="number" placeholder="Total Item 12" readonly/>
+            <input class="form-cant" name="tprecio12" id="tprecio12" type="number" value="0" placeholder="Total Item 12" readonly/>
 
         </div>
 
@@ -335,7 +335,7 @@
             <input class="form-cant" name="cant13" id="cant13" type="number" placeholder="Cantidad 13"/>
             {!! $errors->first('cant13', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio13" id="tprecio13" type="number" placeholder="Total Item 13" readonly/>
+            <input class="form-cant" name="tprecio13" id="tprecio13" type="number" value="0" placeholder="Total Item 13" readonly/>
 
         </div>
 
@@ -356,7 +356,7 @@
             <input class="form-cant" name="cant14" id="cant14" type="number" placeholder="Cantidad 14"/>
             {!! $errors->first('cant14', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio14" id="tprecio14" type="number" placeholder="Total Item 14" readonly/>
+            <input class="form-cant" name="tprecio14" id="tprecio14" type="number" value="0" placeholder="Total Item 14" readonly/>
 
         </div>
 
@@ -377,7 +377,7 @@
             <input class="form-cant" name="cant15" id="cant15" type="number" placeholder="Cantidad 15"/>
             {!! $errors->first('cant15', '<div class="invalid-feedback">:message</div>') !!}
 
-            <input class="form-cant" name="tprecio15" id="tprecio15" type="number" placeholder="Total Item 15" readonly/>
+            <input class="form-cant" name="tprecio15" id="tprecio15" type="number" value="0" placeholder="Total Item 15" readonly/>
 
         </div> 
 

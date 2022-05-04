@@ -144,21 +144,21 @@ $cel=DB::table('clientes')->where('id', $remisione->doc)->value('cel');
 $correo=DB::table('clientes')->where('id', $remisione->doc)->value('correo');
 $tipoDoc=DB::table('clientes')->where('id', $remisione->doc)->value('tipoDoc');
 
-$C1 = DB::table('productos')->where('id', $remisione->item1)->value("precio");
-$C2 = DB::table('productos')->where('id', $remisione->item2)->value("precio");
-$C3 = DB::table('productos')->where('id', $remisione->item3)->value("precio");
-$C4 = DB::table('productos')->where('id', $remisione->item4)->value("precio");
-$C5 = DB::table('productos')->where('id', $remisione->item5)->value("precio");
-$C6 = DB::table('productos')->where('id', $remisione->item6)->value("precio");
-$C7 = DB::table('productos')->where('id', $remisione->item7)->value("precio");
-$C8 = DB::table('productos')->where('id', $remisione->item8)->value("precio");
-$C9 = DB::table('productos')->where('id', $remisione->item9)->value("precio");
-$C10 = DB::table('productos')->where('id', $remisione->item10)->value("precio");
-$C11 = DB::table('productos')->where('id', $remisione->item11)->value("precio");
-$C12 = DB::table('productos')->where('id', $remisione->item12)->value("precio");
-$C13 = DB::table('productos')->where('id', $remisione->item13)->value("precio");
-$C14 = DB::table('productos')->where('id', $remisione->item14)->value("precio");
-$C15 = DB::table('productos')->where('id', $remisione->item15)->value("precio");
+$C1 = $remisione->precio1;
+$C2 = $remisione->precio2;
+$C3 = $remisione->precio3;
+$C4 = $remisione->precio4;
+$C5 = $remisione->precio5;
+$C6 = $remisione->precio6;
+$C7 = $remisione->precio7;
+$C8 = $remisione->precio8;
+$C9 = $remisione->precio9;
+$C10 = $remisione->precio10;
+$C11 = $remisione->precio11;
+$C12 = $remisione->precio12;
+$C13 = $remisione->precio13;
+$C14 = $remisione->precio14;
+$C15 = $remisione->precio15;
 
 $I1 = DB::table('productos')->where('id', $remisione->item1)->value("item");
 $I2 = DB::table('productos')->where('id', $remisione->item2)->value("item");
@@ -218,15 +218,19 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
 
             <table id="izq1" class="ini">
                 <td>
-                    <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.jpeg"></tr>
-                    <tr><strong style="font-size: 25px;">REMISIÓN No. RM-{{$remisione->id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong></tr>
+                <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>   
+                    <tr>
+                        <strong style="font-size: 25px;">REMISIÓN No. RM-{{$remisione->id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>
+                    </tr>      
                 </td>
             </table>
 
             <table id="der1" class="ini">
                 <td>
-                    <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.jpeg"></tr>
-                    <tr>REMISIÓN No. RM-{{$remisione->id}}</tr>
+                <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>
+                    <tr>
+                    REMISIÓN No. RM-{{$remisione->id}}
+                    </tr>   
                 </td>
             </table>
 
@@ -246,10 +250,6 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                         </tr>
                     </thead>
                         <tr>
-                            <th id="center" colspan="4">&nbsp;</th>
-                        </tr>
-
-                        <tr>
                             <th>Nombre:</th>
                             <td colspan="3">
                                 <u>
@@ -271,14 +271,9 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <th>{{ $tipoDoc }}:</th>
                             <td><u>{{ $remisione->doc }}</u></td>
                         </tr>
-                        <tr>
-                            <th>Celular:</th>
-                            <td><u>{{ $cel }}</u></td>
-                            <th>Correo:</th>
-                            <td><u>{{ $correo }}</u></td>
-                        </tr>  
                     </table>
 
+   
 
                 <div class="form-group">
                 <table id="col2" class="clase_table table-striped table-hover" with="19%">
@@ -289,24 +284,20 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                     </thead>
                         <tr>
                             <th>Fecha:</th>
-                            <td><u></u></td>
-                        </tr>
-                        <tr>
-                            <th>Dirección:</th>
-                            <td> <u></u></td>
-                        </tr>
-                        <tr>
-                            <th>Ciudad:</th>
-                            <td><u>{{ $ciudad }}</u></td>
+                            <td><u>{{$remisione->created_at->format('d-m-Y')}}</u></td>
                         </tr>
                         <tr>
                             <th>Vencimiento:</th>
-                            <td><u></u></td>
+                            <td><u>{{$remisione->created_at->format('d-m-Y')}}</u></td>
                         </tr>
                         <tr>
                             <th>Condición:</th>
-                            <td><u></u></td>
+                            <td><u>{{$remisione->pago}}</u></td>
                         </tr>
+                        <tr>
+                            <th>Celular:</th>
+                            <td><u>{{ $cel }}</u></td>
+                        </tr>  
                 </table>
                 
                 <div class="form-group">
@@ -318,24 +309,20 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                     </thead>
                         <tr>
                             <th>Fecha:</th>
-                            <td><u></u></td>
-                        </tr>
-                        <tr>
-                            <th>Dirección:</th>
-                            <td> <u></u></td>
-                        </tr>
-                        <tr>
-                            <th>Ciudad:</th>
-                            <td><u>{{ $ciudad }}</u></td>
+                            <td><u>{{$remisione->created_at->format('d-m-Y')}}</u></td>
                         </tr>
                         <tr>
                             <th>Vencimiento:</th>
-                            <td><u></u></td>
+                            <td><u>{{$remisione->created_at->format('d-m-Y')}}</u></td>
                         </tr>
                         <tr>
                             <th>Condición:</th>
-                            <td><u></u></td>
+                            <td><u>{{$remisione->pago}}</u></td>
                         </tr>
+                        <tr>
+                            <th>Celular:</th>
+                            <td><u>{{ $cel }}</u></td>
+                        </tr>  
                 </table>
 
                     <!--Tabla Cliente-->
@@ -346,9 +333,6 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <th id="center" colspan="4">CLIENTE</th>
                         </tr>
                     </thead>
-                        <tr>
-                            <th id="center" colspan="4">&nbsp;</th>
-                        </tr>
                         <tr>
                             <th>Nombre:</th>
                             <td colspan="3">
@@ -371,12 +355,6 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <th>{{ $tipoDoc }}:</th>
                             <td><u>{{ $remisione->doc }}</u></td>
                         </tr>
-                        <tr>
-                            <th>Celular:</th>
-                            <td><u>{{ $cel }}</u></td>
-                            <th>Correo:</th>
-                            <td><u>{{ $correo }}</u></td>
-                        </tr>  
                     </table>
             </div>
                 <!-- Izquierda -->
@@ -395,114 +373,114 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <td>{{ $I1 }}</td>
                             <td>{{ $N1 }}</td>
                             <td>{{ $remisione->cant1 }}</td>
-                            <td>{{ $C1 }}</td>
-                            <td>{{ $P1 }}</td>
+                            <td>{{ $remisione->precio1 }}</td>
+                            <td>{{ $remisione->tprecio1 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I2 }}</td>
                             <td>{{ $N2 }}</td>
                             <td>{{ $remisione->cant2 }}</td>
-                            <td>{{ $C2 }}</td>
-                            <td>{{ $P2 }}</td>
+                            <td>{{ $remisione->precio2 }}</td>
+                            <td>{{ $remisione->tprecio2 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I3 }}</td>
                             <td>{{ $N3 }}</td>
                             <td>{{ $remisione->cant3 }}</td>
-                            <td>{{ $C3 }}</td>
-                            <td>{{ $P3 }}</td>
+                            <td>{{ $remisione->precio3 }}</td>
+                            <td>{{ $remisione->tprecio3 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I4 }}</td>
                             <td>{{ $N4 }}</td>
                             <td>{{ $remisione->cant4 }}</td>
-                            <td>{{ $C4 }}</td>
-                            <td>{{ $P4 }}</td>
+                            <td>{{ $remisione->precio4 }}</td>
+                            <td>{{ $remisione->tprecio4 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I5 }}</td>
                             <td>{{ $N5 }}</td>
                             <td>{{ $remisione->cant5 }}</td>
-                            <td>{{ $C5 }}</td>
-                            <td>{{ $P5 }}</td>
+                            <td>{{ $remisione->precio5 }}</td>
+                            <td>{{ $remisione->tprecio5 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I6 }}</td>
                             <td>{{ $N6 }}</td>
                             <td>{{ $remisione->cant6 }}</td>
-                            <td>{{ $C6 }}</td>
-                            <td>{{ $P6 }}</td>
+                            <td>{{ $remisione->precio6 }}</td>
+                            <td>{{ $remisione->tprecio6 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I7 }}</td>
                             <td>{{ $N7 }}</td>
                             <td>{{ $remisione->cant7 }}</td>
-                            <td>{{ $C7 }}</td>
-                            <td>{{ $P7 }}</td>
+                            <td>{{ $remisione->precio7 }}</td>
+                            <td>{{ $remisione->tprecio7 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I8 }}</td>
                             <td>{{ $N8 }}</td>
                             <td>{{ $remisione->cant8 }}</td>
-                            <td>{{ $C8 }}</td>
-                            <td>{{ $P8 }}</td>
+                            <td>{{ $remisione->precio8 }}</td>
+                            <td>{{ $remisione->tprecio8 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I9 }}</td>
                             <td>{{ $N9 }}</td>
                             <td>{{ $remisione->cant9 }}</td>
-                            <td>{{ $C9 }}</td>
-                            <td>{{ $P9 }}</td>
+                            <td>{{ $remisione->precio9 }}</td>
+                            <td>{{ $remisione->tprecio9 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I10 }}</td>
                             <td>{{ $N10 }}</td>
                             <td>{{ $remisione->cant10 }}</td>
-                            <td>{{ $C10 }}</td>
-                            <td>{{ $P10 }}</td>
+                            <td>{{ $remisione->precio10 }}</td>
+                            <td>{{ $remisione->tprecio10 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I11 }}</td>
                             <td>{{ $N11 }}</td>
                             <td>{{ $remisione->cant11 }}</td>
-                            <td>{{ $C11 }}</td>
-                            <td>{{ $P11 }}</td>
+                            <td>{{ $remisione->precio11 }}</td>
+                            <td>{{ $remisione->tprecio11 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I12 }}</td>
                             <td>{{ $N12 }}</td>
                             <td>{{ $remisione->cant12 }}</td>
-                            <td>{{ $C12 }}</td>
-                            <td>{{ $P12 }}</td>
+                            <td>{{ $remisione->precio12 }}</td>
+                            <td>{{ $remisione->tprecio12 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I13 }}</td>
                             <td>{{ $N13 }}</td>
                             <td>{{ $remisione->cant13 }}</td>
-                            <td>{{ $C13 }}</td>
-                            <td>{{ $P13 }}</td>
+                            <td>{{ $remisione->precio13 }}</td>
+                            <td>{{ $remisione->tprecio13 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I14 }}</td>
                             <td>{{ $N14 }}</td>
                             <td>{{ $remisione->cant14 }}</td>
-                            <td>{{ $C14 }}</td>
-                            <td>{{ $P14 }}</td>
+                            <td>{{ $remisione->precio14 }}</td>
+                            <td>{{ $remisione->tprecio14 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I15 }}</td>
                             <td>{{ $N15 }}</td>
                             <td>{{ $remisione->cant15 }}</td>
-                            <td>{{ $C15 }}</td>
-                            <td>{{ $P15 }}</td>
+                            <td>{{ $remisione->precio15 }}</td>
+                            <td>{{ $remisione->tprecio15 }}</td>
                         </tr>
                         <tr>
-                            <td colspan="2">Notas: {{$remisione->notas}}</td>
+                            <td colspan="2">Notas: </td>
                             <td id="first">Total</td>
                             <td colspan="2">${{ number_format($Total, 2) }}</td>
                         </tr>
                         <tr>
-                            <th colspan="2" style="height: 120px;">Firma Autorizada:</th>
+                            <th colspan="2" style="height: 120px;">{{$remisione->notas}}</th>
                             <th colspan="4" style="height: 120px;">Recibido cliente:</th>
                         </tr>
                         <tr>
@@ -512,7 +490,7 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
 
                 <!-- Derecha -->
                 <table id="der" class="clase tables" with="30%">
-                    <thead>
+                <thead>
                         <tr>
                             <th id="first">Item</th>
                             <th id="first">Descripción</th>
@@ -525,114 +503,114 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <td>{{ $I1 }}</td>
                             <td>{{ $N1 }}</td>
                             <td>{{ $remisione->cant1 }}</td>
-                            <td>{{ $C1 }}</td>
-                            <td>{{ $P1 }}</td>
+                            <td>{{ $remisione->precio1 }}</td>
+                            <td>{{ $remisione->tprecio1 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I2 }}</td>
                             <td>{{ $N2 }}</td>
                             <td>{{ $remisione->cant2 }}</td>
-                            <td>{{ $C2 }}</td>
-                            <td>{{ $P2 }}</td>
+                            <td>{{ $remisione->precio2 }}</td>
+                            <td>{{ $remisione->tprecio2 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I3 }}</td>
                             <td>{{ $N3 }}</td>
                             <td>{{ $remisione->cant3 }}</td>
-                            <td>{{ $C3 }}</td>
-                            <td>{{ $P3 }}</td>
+                            <td>{{ $remisione->precio3 }}</td>
+                            <td>{{ $remisione->tprecio3 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I4 }}</td>
                             <td>{{ $N4 }}</td>
                             <td>{{ $remisione->cant4 }}</td>
-                            <td>{{ $C4 }}</td>
-                            <td>{{ $P4 }}</td>
+                            <td>{{ $remisione->precio4 }}</td>
+                            <td>{{ $remisione->tprecio4 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I5 }}</td>
                             <td>{{ $N5 }}</td>
                             <td>{{ $remisione->cant5 }}</td>
-                            <td>{{ $C5 }}</td>
-                            <td>{{ $P5 }}</td>
+                            <td>{{ $remisione->precio5 }}</td>
+                            <td>{{ $remisione->tprecio5 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I6 }}</td>
                             <td>{{ $N6 }}</td>
                             <td>{{ $remisione->cant6 }}</td>
-                            <td>{{ $C6 }}</td>
-                            <td>{{ $P6 }}</td>
+                            <td>{{ $remisione->precio6 }}</td>
+                            <td>{{ $remisione->tprecio6 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I7 }}</td>
                             <td>{{ $N7 }}</td>
                             <td>{{ $remisione->cant7 }}</td>
-                            <td>{{ $C7 }}</td>
-                            <td>{{ $P7 }}</td>
+                            <td>{{ $remisione->precio7 }}</td>
+                            <td>{{ $remisione->tprecio7 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I8 }}</td>
                             <td>{{ $N8 }}</td>
                             <td>{{ $remisione->cant8 }}</td>
-                            <td>{{ $C8 }}</td>
-                            <td>{{ $P8 }}</td>
+                            <td>{{ $remisione->precio8 }}</td>
+                            <td>{{ $remisione->tprecio8 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I9 }}</td>
                             <td>{{ $N9 }}</td>
                             <td>{{ $remisione->cant9 }}</td>
-                            <td>{{ $C9 }}</td>
-                            <td>{{ $P9 }}</td>
+                            <td>{{ $remisione->precio9 }}</td>
+                            <td>{{ $remisione->tprecio9 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I10 }}</td>
                             <td>{{ $N10 }}</td>
                             <td>{{ $remisione->cant10 }}</td>
-                            <td>{{ $C10 }}</td>
-                            <td>{{ $P10 }}</td>
+                            <td>{{ $remisione->precio10 }}</td>
+                            <td>{{ $remisione->tprecio10 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I11 }}</td>
                             <td>{{ $N11 }}</td>
                             <td>{{ $remisione->cant11 }}</td>
-                            <td>{{ $C11 }}</td>
-                            <td>{{ $P11 }}</td>
+                            <td>{{ $remisione->precio11 }}</td>
+                            <td>{{ $remisione->tprecio11 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I12 }}</td>
                             <td>{{ $N12 }}</td>
                             <td>{{ $remisione->cant12 }}</td>
-                            <td>{{ $C12 }}</td>
-                            <td>{{ $P12 }}</td>
+                            <td>{{ $remisione->precio12 }}</td>
+                            <td>{{ $remisione->tprecio12 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I13 }}</td>
                             <td>{{ $N13 }}</td>
                             <td>{{ $remisione->cant13 }}</td>
-                            <td>{{ $C13 }}</td>
-                            <td>{{ $P13 }}</td>
+                            <td>{{ $remisione->precio13 }}</td>
+                            <td>{{ $remisione->tprecio13 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I14 }}</td>
                             <td>{{ $N14 }}</td>
                             <td>{{ $remisione->cant14 }}</td>
-                            <td>{{ $C14 }}</td>
-                            <td>{{ $P14 }}</td>
+                            <td>{{ $remisione->precio14 }}</td>
+                            <td>{{ $remisione->tprecio14 }}</td>
                         </tr>
                         <tr>
                             <td>{{ $I15 }}</td>
                             <td>{{ $N15 }}</td>
                             <td>{{ $remisione->cant15 }}</td>
-                            <td>{{ $C15 }}</td>
-                            <td>{{ $P15 }}</td>
+                            <td>{{ $remisione->precio15 }}</td>
+                            <td>{{ $remisione->tprecio15 }}</td>
                         </tr>
                         <tr>
-                            <td colspan="2">Notas: {{$remisione->notas}}</td>
+                            <td colspan="2">Notas: </td>
                             <td id="first">Total</td>
                             <td colspan="2">${{ number_format($Total, 2) }}</td>
                         </tr>
                         <tr>
-                            <th colspan="2" style="height: 120px;">Firma Autorizada:</th>
+                            <th colspan="2" style="height: 120px;">{{$remisione->notas}}</th>
                             <th colspan="4" style="height: 120px;">Recibido cliente:</th>
                         </tr>
                         <tr>

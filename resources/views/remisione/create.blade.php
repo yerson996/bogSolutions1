@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+
 <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -451,6 +452,8 @@ var cant2 = document.getElementById('cant2').value;
 var precio2 = document.getElementById('precio2').value;
 
 var tprecio2 = document.getElementById('tprecio2');
+
+tprecio2.value = cant2*precio2;
 
 };
 

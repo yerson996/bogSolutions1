@@ -20,62 +20,77 @@ return new class extends Migration
 
             $table->bigInteger('item1')->unsigned();
             $table->bigInteger('cant1');
+            $table->bigInteger('precio1');
             $table->bigInteger('tprecio1');
 
             $table->bigInteger('item2')->nullable()->unsigned();
             $table->bigInteger('cant2')->nullable();
+            $table->bigInteger('precio2')->nullable();
             $table->bigInteger('tprecio2')->nullable();
 
             $table->bigInteger('item3')->nullable()->unsigned();
             $table->bigInteger('cant3')->nullable();
+            $table->bigInteger('precio3')->nullable();
             $table->bigInteger('tprecio3')->nullable();
 
             $table->bigInteger('item4')->nullable()->unsigned();
             $table->bigInteger('cant4')->nullable();
+            $table->bigInteger('precio4')->nullable();
             $table->bigInteger('tprecio4')->nullable();
 
             $table->bigInteger('item5')->nullable()->unsigned();
             $table->bigInteger('cant5')->nullable();
+            $table->bigInteger('precio5')->nullable();
             $table->bigInteger('tprecio5')->nullable();
 
             $table->bigInteger('item6')->nullable()->unsigned();
             $table->bigInteger('cant6')->nullable();
+            $table->bigInteger('precio6')->nullable();
             $table->bigInteger('tprecio6')->nullable();
 
             $table->bigInteger('item7')->nullable()->unsigned();
             $table->bigInteger('cant7')->nullable();
+            $table->bigInteger('precio7')->nullable();
             $table->bigInteger('tprecio7')->nullable();
 
             $table->bigInteger('item8')->nullable()->unsigned();
             $table->bigInteger('cant8')->nullable();
+            $table->bigInteger('precio8')->nullable();
             $table->bigInteger('tprecio8')->nullable();
 
             $table->bigInteger('item9')->nullable()->unsigned();
             $table->bigInteger('cant9')->nullable();
+            $table->bigInteger('precio9')->nullable();
             $table->bigInteger('tprecio9')->nullable();
 
             $table->bigInteger('item10')->nullable()->unsigned();
             $table->bigInteger('cant10')->nullable();
+            $table->bigInteger('precio10')->nullable();
             $table->bigInteger('tprecio10')->nullable();
 
             $table->bigInteger('item11')->nullable()->unsigned();
             $table->bigInteger('cant11')->nullable();
+            $table->bigInteger('precio11')->nullable();
             $table->bigInteger('tprecio11')->nullable();
 
             $table->bigInteger('item12')->nullable()->unsigned();
             $table->bigInteger('cant12')->nullable();
+            $table->bigInteger('precio12')->nullable();
             $table->bigInteger('tprecio12')->nullable();
 
             $table->bigInteger('item13')->nullable()->unsigned();
             $table->bigInteger('cant13')->nullable();
+            $table->bigInteger('precio13')->nullable();
             $table->bigInteger('tprecio13')->nullable();
 
             $table->bigInteger('item14')->nullable()->unsigned();
             $table->bigInteger('cant14')->nullable();
+            $table->bigInteger('precio14')->nullable();
             $table->bigInteger('tprecio14')->nullable();
 
             $table->bigInteger('item15')->nullable()->unsigned();
             $table->bigInteger('cant15')->nullable();
+            $table->bigInteger('precio15')->nullable();
             $table->bigInteger('tprecio15')->nullable();
 
             $table->string('pago')->nullable();
