@@ -18,15 +18,15 @@ return new class extends Migration
             $table->string('persona');
             $table->string('tipoDoc');
             $table->id();
-            $table->string('nombre1');
-            $table->string('nombre2');
-            $table->string('apellido1');
-            $table->string('apellido2');
-            $table->string('nombreLegal');
-            $table->string('direccion');
-            $table->string('ciudad');
-            $table->string('cel');
-            $table->string('correo');
+            $table->string('nombre1')->nullable();
+            $table->string('nombre2')->nullable();
+            $table->string('apellido1')->nullable();
+            $table->string('apellido2')->nullable();
+            $table->string('nombreLegal')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('ciudad')->nullable();
+            $table->string('cel')->nullable();
+            $table->string('correo')->nullable();
             $table->timestamps();
         });
     }

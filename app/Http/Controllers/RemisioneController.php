@@ -21,8 +21,6 @@ class RemisioneController extends Controller
         return Producto::where('id', $id)->get();
     }
 
-
-
     /**
      * Display a listing of the resource.
      *
@@ -123,7 +121,7 @@ class RemisioneController extends Controller
         $remisione->update($request->all());
 
         return redirect()->route('remisiones.index')
-            ->with('success', 'Remisione updated successfully');
+            ->with('success', 'Remision actualizada correctamente');
     }
 
     /**
@@ -136,7 +134,7 @@ class RemisioneController extends Controller
         $remisione = Remisione::find($id)->delete();
 
         return redirect()->route('remisiones.index')
-            ->with('success', 'Remisione deleted successfully');
+            ->with('success', 'Remision eliminada correctamente');
     }
     
 }
