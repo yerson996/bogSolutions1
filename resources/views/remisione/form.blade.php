@@ -16,6 +16,23 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 
+    .form-contr {
+
+    width: 70%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
   .form-cant {
 
     width: 15%;
@@ -49,20 +66,30 @@
         <div class="form-group">
         {{ Form::label('INFORMACIÓN DE CLIENTE') }}  
         <div class="cont">
+
+            <!-- Seleccionar Documento o nombres -->
             {{ Form::label('Documento') }} <br>
-            <select id="doc" name="doc" class="form-control">
-                <option value="0" data-precio="--" selected disabled>--Seleccione Cliente--</option>
+            <select id="doc" name="doc" class="js-example-basic-single form-control">
+                <option value="0" data-precio="--" selected disabled>--Seleccione Documento--</option>
                 @foreach($clientes as $cliente)cliente
-                <option value="{{ $cliente->id }}" data-direccion="{{ $cliente->direccion }}" data-ciudad="{{ $cliente->ciudad }}" data-cel="{{ $cliente->cel }}">{{ $cliente->id }} | {{ $cliente->nombre1 }}{{ $cliente->nombre2 }}{{ $cliente->apellido1 }}{{ $cliente->apellido2 }}{{ $cliente->nombreLegal }}</option>
+                <option value="{{ $cliente->id }}"  data-nombre1="{{ $cliente->nombre1 }}" data-nombre2="{{ $cliente->nombre2 }}" data-legal="{{ $cliente->nombreLegal }}" 
+                data-apellido1="{{ $cliente->apellido1 }}" data-apellido2="{{ $cliente->apellido2 }}" data-direccion="{{ $cliente->direccion }}" 
+                data-ciudad="{{ $cliente->ciudad }}" data-cel="{{ $cliente->cel }}">{{ $cliente->id }} | {{ $cliente->nombre1 }}{{ $cliente->nombre2 }}{{ $cliente->apellido1 }}{{ $cliente->apellido2 }}{{ $cliente->nombreLegal }}</option>
                 @endforeach                
             </select>
+
+            <br>
+
             {!! $errors->first('doc', '<div class="invalid-feedback">:message</div>') !!}
-                <br>
+        <br>
             <input class="form-contro" id="direccion" type="text" placeholder="Dirección" readonly/>
             <input class="form-cant" id="ciudad" type="text" placeholder="Ciudad" readonly/>
             <input class="form-cant" id="cel" type="number" placeholder="Celular" readonly/>
         </div>
         </div>
+
+
+
 
         {{ Form::label('PRODUCTOS') }} 
         <div class="cont">
@@ -274,112 +301,6 @@
 
             <input class="form-cant" name="tprecio10" id="tprecio10" type="number" value="0" placeholder="Total Item 10" readonly/>
 
-        </div>
-
-        <!-- ITEM 11 --> 
-
-        <div class="form-group">
-            
-            {{ Form::label('item11')}} <br>
-            <select id="item11" name="item11" class="form-contro">
-                <option value="0" data-precio11="--" selected disabled>--Seleccione producto--</option>
-                @foreach($productos as $producto)
-                <option value="{{ $producto->id }}" data-precio11="{{ $producto->precio }}">{{ $producto->item}} | {{ $producto->nombre }} - {{ $producto->precio }}</option>      
-                @endforeach
-            </select>
-
-            <input class="form-cant" name="precio11" id="precio11" type="number" placeholder="Precio item 11"/>
-
-            <input class="form-cant" name="cant11" id="cant11" type="number" placeholder="Cantidad 11"/>
-            {!! $errors->first('cant11', '<div class="invalid-feedback">:message</div>') !!}
-
-            <input class="form-cant" name="tprecio11" id="tprecio11" type="number" value="0" placeholder="Total Item 11" readonly/>
-
-        </div>
-
-        <!-- ITEM 12 --> 
-
-        <div class="form-group">
-            
-            {{ Form::label('item12')}} <br>
-            <select id="item12" name="item12" class="form-contro">
-                <option value="0" data-precio12="--" selected disabled>--Seleccione producto--</option>
-                @foreach($productos as $producto)
-                <option value="{{ $producto->id }}" data-precio12="{{ $producto->precio }}">{{ $producto->item}} | {{ $producto->nombre }} - {{ $producto->precio }}</option>      
-                @endforeach
-            </select>
-
-            <input class="form-cant" name="precio12" id="precio12" type="number" placeholder="Precio item 12"/>
-
-            <input class="form-cant" name="cant12" id="cant12" type="number" placeholder="Cantidad 12"/>
-            {!! $errors->first('cant12', '<div class="invalid-feedback">:message</div>') !!}
-
-            <input class="form-cant" name="tprecio12" id="tprecio12" type="number" value="0" placeholder="Total Item 12" readonly/>
-
-        </div>
-
-        <!-- ITEM 13 --> 
-
-        <div class="form-group">
-            
-            {{ Form::label('item13')}} <br>
-            <select id="item13" name="item13" class="form-contro">
-                <option value="0" data-precio13="--" selected disabled>--Seleccione producto--</option>
-                @foreach($productos as $producto)
-                <option value="{{ $producto->id }}" data-precio13="{{ $producto->precio }}">{{ $producto->item}} | {{ $producto->nombre }} - {{ $producto->precio }}</option>      
-                @endforeach
-            </select>
-
-            <input class="form-cant" name="precio13" id="precio13" type="number" placeholder="Precio item 13"/>
-
-            <input class="form-cant" name="cant13" id="cant13" type="number" placeholder="Cantidad 13"/>
-            {!! $errors->first('cant13', '<div class="invalid-feedback">:message</div>') !!}
-
-            <input class="form-cant" name="tprecio13" id="tprecio13" type="number" value="0" placeholder="Total Item 13" readonly/>
-
-        </div>
-
-            <!-- ITEM 14 --> 
-
-            <div class="form-group">
-            
-            {{ Form::label('item14')}} <br>
-            <select id="item14" name="item14" class="form-contro">
-                <option value="0" data-precio14="--" selected disabled>--Seleccione producto--</option>
-                @foreach($productos as $producto)
-                <option value="{{ $producto->id }}" data-precio14="{{ $producto->precio }}">{{ $producto->item}} | {{ $producto->nombre }} - {{ $producto->precio }}</option>      
-                @endforeach
-            </select>
-
-            <input class="form-cant" name="precio14" id="precio14" type="number" placeholder="Precio item 14"/>
-
-            <input class="form-cant" name="cant14" id="cant14" type="number" placeholder="Cantidad 14"/>
-            {!! $errors->first('cant14', '<div class="invalid-feedback">:message</div>') !!}
-
-            <input class="form-cant" name="tprecio14" id="tprecio14" type="number" value="0" placeholder="Total Item 14" readonly/>
-
-        </div>
-
-        <!-- ITEM 15 --> 
-
-            <div class="form-group">
-            
-            {{ Form::label('item15')}} <br>
-            <select id="item15" name="item15" class="form-contro">
-                <option value="0" data-precio15="--" selected disabled>--Seleccione producto--</option>
-                @foreach($productos as $producto)
-                <option value="{{ $producto->id }}" data-precio15="{{ $producto->precio }}">{{ $producto->item}} | {{ $producto->nombre }} - {{ $producto->precio }}</option>      
-                @endforeach
-            </select>
-
-            <input class="form-cant" name="precio15" id="precio15" type="number" placeholder="Precio item 15"/>
-
-            <input class="form-cant" name="cant15" id="cant15" type="number" placeholder="Cantidad 15"/>
-            {!! $errors->first('cant15', '<div class="invalid-feedback">:message</div>') !!}
-
-            <input class="form-cant" name="tprecio15" id="tprecio15" type="number" value="0" placeholder="Total Item 15" readonly/>
-
-        </div> 
 
         {{ Form::label('TOTAL PRECIO PRODUCTOS')}} <br>
         <input type="button" value="Calcular" onclick="total()" class="btn btn-info"/>
@@ -388,6 +309,8 @@
         
 
 </div>
+</div>
+
         {{ Form::label('INFORMACIÓN ADICIONAL') }}
     <div class="cont">
         <div class="form-group">
@@ -415,5 +338,7 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </div>
+
+
 
 

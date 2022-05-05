@@ -2,11 +2,14 @@
 
 @section('title', 'Crear Remision')
 
+
 @section('content_header')
     <br>
 @stop
 
 @section('content')
+<link href="path/to/select2.min.css" rel="stylesheet" />
+
 
 <section class="content container-fluid">
         <div class="row">
@@ -24,8 +27,6 @@
 
                             @include('remisione.form')
 
-                            
-
                         </form>
                     </div>
                 </div>
@@ -36,10 +37,19 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    
 @stop
 
 @section('js')
 <script>
+//Select 2
+// In your Javascript (external .js resource or <script> tag)
+// In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+
+
 // Documento
 
 document.getElementById('doc').onchange = function() {
@@ -50,15 +60,23 @@ document.getElementById('doc').onchange = function() {
 
   /* Referencia a los input */
 
+  var names = document.getElementById('names');
+  var nombreLegal = document.getElementById('nombreLegal');
   var direccion = document.getElementById('direccion');
   var ciudad = document.getElementById('ciudad');
   var cel = document.getElementById('cel');
 
   /* Asignamos cada dato a su input*/
+  
+  var union = mData.nombre1+' '+mData.nombre2+' '+mData.apellido1+' '+mData.apellido2+' '+mData.legal;
+
+  names.value = mData.nombre1;
   direccion.value = mData.direccion;
   ciudad.value = mData.ciudad;
   cel.value = mData.cel;
 };
+
+
 
 //Item1
 
