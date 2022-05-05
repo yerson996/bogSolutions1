@@ -56,3 +56,6 @@ Route::middleware([
 ])->group(function () { 
 Route::resource('remisiones', App\Http\Controllers\RemisioneController::class);
 });
+
+
+

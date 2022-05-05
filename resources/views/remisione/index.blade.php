@@ -33,42 +33,70 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            
+                        
+                        
+                        
+                        
+                        
+                        <table id="example" class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No Remisión</th>
 										<th>Documento del Cliente</th>
 
 										<th>Notas</th>
-										<th>Precio</th>
+										<th>Estado</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     @foreach ($remisiones as $remisione)
                                         <tr>
                                             <td>RM-{{ $remisione->id }}</td>
                                             
 											<td>{{ $remisione->doc }}</td>
-											<td>{{ $remisione->notas }}</td>
-											<td><script type="text/javascript">
-											document.write(f.format({{ $remisione->precio }}));
-											</script></td>
+											<td>{{ $remisione->notas }}</td> 
+                                            <td>  {{ $remisione->estado }}    </td>
 
+
+                                        
                                             <td>
                                                 <form action="{{ route('remisiones.destroy',$remisione->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary "  target="_blank" href="{{ route('remisiones.show',$remisione->id) }}"><i class="fa fa-fw fa-eye"></i>Imprimir</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('remisiones.edit',$remisione->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Quieres Borrar?')"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('¿Quieres Anular?')"><i class="fa fa-fw fa-ban"></i>Anular</button>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                <tfoot class="thead">
+                                    <tr>
+                                        <th>No Remisión</th>
+										<th>Documento del Cliente</th>
+
+										<th>Notas</th>
+										<th>Estado</th>
+
+                                        <th></th>
+                                    </tr>
+                            </tfoot>
+
                             </table>
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -76,6 +104,8 @@
             </div>
         </div>
     </div>
+
+    
 @stop
 
 @section('css')
@@ -84,10 +114,22 @@
 
 @section('js')
     <script>
-	const f = new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    miniumFractionDigits: 0
-    }); 
+
+    $(document).ready(function() {
+    $('#example').DataTable({
+        "language": {
+            "search":   "Buscar",
+            "lengthMenu": "Mostrar _MENU_ registros por pagina",
+            "info": "Mostrando pagina _PAGE_ de _PAGES_",
+            "paginate":{
+                    "previous": "Anterior",
+                    "next": "Siguiente",
+                    "first": "Primero",
+                    "last": "Ultimo"
+            }
+        }
+
+    });
+} );
 	</script>
 @stop

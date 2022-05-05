@@ -96,6 +96,8 @@ return new class extends Migration
             $table->string('pago')->nullable();
             $table->string('notas')->nullable();
             $table->bigInteger('precio');
+
+            $table->string('estado')->default('Activo');
         
             $table->foreign('doc')->references('id')->on('clientes');
             $table->foreign('item1')->references('id')->on('productos');

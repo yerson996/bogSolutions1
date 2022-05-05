@@ -73,6 +73,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $notas
  * @property $pago
  * @property $precio
+ * @property $estado
  * 
  * @property $created_at
  * @property $updated_at
@@ -114,7 +115,7 @@ class Remisione extends Model
      *
      * @var array
      */
-    protected $fillable = ['doc','item1','cant1','item2','precio1','precio2','precio3','precio4','precio5','precio6','precio7','precio8','precio9','precio10','precio11','precio12','precio13','precio14','precio15','tprecio1','tprecio2','tprecio3','tprecio4','tprecio5','tprecio6','tprecio7','tprecio8','tprecio9','tprecio10','tprecio11','tprecio12','tprecio13','tprecio14','tprecio15','cant2','item3','cant3','item4','cant4','item5','cant5','item6','cant6','item7','cant7','item8','cant8','item9','cant9','item10','cant10','item11','cant11','item12','cant12','item13','cant13','item14','cant14','item15','cant15','notas','precio','pago'];
+    protected $fillable = ['doc','item1','cant1','item2','precio1','precio2','precio3','precio4','precio5','precio6','precio7','precio8','precio9','precio10','precio11','precio12','precio13','precio14','precio15','tprecio1','tprecio2','tprecio3','tprecio4','tprecio5','tprecio6','tprecio7','tprecio8','tprecio9','tprecio10','tprecio11','tprecio12','tprecio13','tprecio14','tprecio15','cant2','item3','cant3','item4','cant4','item5','cant5','item6','cant6','item7','cant7','item8','cant8','item9','cant9','item10','cant10','item11','cant11','item12','cant12','item13','cant13','item14','cant14','item15','cant15','notas','precio','pago','estado'];
 
 
     /**

@@ -70,7 +70,6 @@ document.getElementById('doc').onchange = function() {
   
   var union = mData.nombre1+' '+mData.nombre2+' '+mData.apellido1+' '+mData.apellido2+' '+mData.legal;
 
-  names.value = mData.nombre1;
   direccion.value = mData.direccion;
   ciudad.value = mData.ciudad;
   cel.value = mData.cel;
@@ -311,121 +310,6 @@ document.getElementById('item10').onchange = function() {
   //
 };
 
-//Item11
-
-document.getElementById('item11').onchange = function() {
-  /* Referencia al option seleccionado */
-  var mOption = this.options[this.selectedIndex];
-  /* Referencia a los atributos data de la opción seleccionada */
-  var mData = mOption.dataset;
-
-  /* Referencia a los input */
-
-  var precio11 = document.getElementById('precio11');
-
-  /* Asignamos cada dato a su input*/
-  precio11.value = mData.precio11;
-
-  var cant11 = document.getElementById('cant11');
-  cant11.value = null;
-
-  var tprecio11 = document.getElementById('tprecio11');
-  tprecio11.value = null;
-  //
-};
-
-//Item12
-
-document.getElementById('item12').onchange = function() {
-  /* Referencia al option seleccionado */
-  var mOption = this.options[this.selectedIndex];
-  /* Referencia a los atributos data de la opción seleccionada */
-  var mData = mOption.dataset;
-
-  /* Referencia a los input */
-
-  var precio12 = document.getElementById('precio12');
-
-  /* Asignamos cada dato a su input*/
-  precio12.value = mData.precio12;
-
-  var cant12 = document.getElementById('cant12');
-  cant12.value = null;
-
-  var tprecio12 = document.getElementById('tprecio12');
-  tprecio12.value = null;
-  //
-};
-
-//Item13
-
-document.getElementById('item13').onchange = function() {
-  /* Referencia al option seleccionado */
-  var mOption = this.options[this.selectedIndex];
-  /* Referencia a los atributos data de la opción seleccionada */
-  var mData = mOption.dataset;
-
-  /* Referencia a los input */
-
-  var precio13 = document.getElementById('precio13');
-
-  /* Asignamos cada dato a su input*/
-  precio13.value = mData.precio13;
-
-  var cant13 = document.getElementById('cant13');
-  cant13.value = null;
-
-  var tprecio13 = document.getElementById('tprecio13');
-  tprecio13.value = null;
-  //
-};
-
-//Item14
-
-document.getElementById('item14').onchange = function() {
-  /* Referencia al option seleccionado */
-  var mOption = this.options[this.selectedIndex];
-  /* Referencia a los atributos data de la opción seleccionada */
-  var mData = mOption.dataset;
-
-  /* Referencia a los input */
-
-  var precio14 = document.getElementById('precio14');
-
-  /* Asignamos cada dato a su input*/
-  precio14.value = mData.precio14;
-
-  var cant14 = document.getElementById('cant14');
-  cant14.value = null;
-
-  var tprecio14 = document.getElementById('tprecio14');
-  tprecio14.value = null;
-  //
-};
-
-//Item15
-
-document.getElementById('item15').onchange = function() {
-  /* Referencia al option seleccionado */
-  var mOption = this.options[this.selectedIndex];
-  /* Referencia a los atributos data de la opción seleccionada */
-  var mData = mOption.dataset;
-
-  /* Referencia a los input */
-
-  var precio15 = document.getElementById('precio15');
-
-  /* Asignamos cada dato a su input*/
-  precio15.value = mData.precio15;
-
-  var cant15 = document.getElementById('cant15');
-  cant15.value = null;
-
-  var tprecio15 = document.getElementById('tprecio15');
-  tprecio15.value = null;
-  //
-};
-
 
 //Total precio 1
 
@@ -661,139 +545,6 @@ tprecio10.value = cant10*precio10;
 //
 };
 
-document.getElementById('precio10').onchange = function()  {
-
-var cant10 = document.getElementById('cant10').value;
-var precio10 = document.getElementById('precio10').value;
-
-var tprecio10 = document.getElementById('tprecio10');
-
-tprecio10.value = cant10*precio10;
-//
-};
-
-
-//Total precio 11
-
-document.getElementById('cant11').onchange = function()  {
-
-var cant11 = document.getElementById('cant11').value;
-var precio11 = document.getElementById('precio11').value;
-
-var tprecio11 = document.getElementById('tprecio11');
-
-tprecio11.value = cant11*precio11;
-//
-};
-
-document.getElementById('precio11').onchange = function()  {
-
-var cant11 = document.getElementById('cant11').value;
-var precio11 = document.getElementById('precio11').value;
-
-var tprecio11 = document.getElementById('tprecio11');
-
-tprecio11.value = cant11*precio11;
-//
-};
-
-//Total precio 12
-
-document.getElementById('cant12').onchange = function()  {
-
-var cant12 = document.getElementById('cant12').value;
-var precio12 = document.getElementById('precio12').value;
-
-var tprecio12 = document.getElementById('tprecio12');
-
-tprecio12.value = cant12*precio12;
-//
-};
-
-document.getElementById('precio12').onchange = function()  {
-
-var cant12 = document.getElementById('cant12').value;
-var precio12 = document.getElementById('precio12').value;
-
-var tprecio12 = document.getElementById('tprecio12');
-
-tprecio12.value = cant12*precio12;
-//
-};
-
-//Total precio 13
-
-document.getElementById('cant13').onchange = function()  {
-
-var cant13 = document.getElementById('cant13').value;
-var precio13 = document.getElementById('precio13').value;
-
-var tprecio13 = document.getElementById('tprecio13');
-
-tprecio13.value = cant13*precio13;
-//
-};
-
-document.getElementById('precio13').onchange = function()  {
-
-var cant13 = document.getElementById('cant13').value;
-var precio13 = document.getElementById('precio13').value;
-
-var tprecio13 = document.getElementById('tprecio13');
-
-tprecio13.value = cant13*precio13;
-//
-};
-
-//Total precio 14
-
-document.getElementById('cant14').onchange = function()  {
-
-var cant14 = document.getElementById('cant14').value;
-var precio14 = document.getElementById('precio14').value;
-
-var tprecio14 = document.getElementById('tprecio14');
-
-tprecio14.value = cant14*precio14;
-//
-};
-
-document.getElementById('precio14').onchange = function()  {
-
-var cant14 = document.getElementById('cant14').value;
-var precio14 = document.getElementById('precio14').value;
-
-var tprecio14 = document.getElementById('tprecio14');
-
-tprecio14.value = cant14*precio14;
-//
-};
-
-
-//Total precio 15
-
-document.getElementById('cant15').onchange = function()  {
-
-var cant15 = document.getElementById('cant15').value;
-var precio15 = document.getElementById('precio15').value;
-
-var tprecio15 = document.getElementById('tprecio15');
-
-tprecio15.value = cant15*precio15;
-
-};
-
-document.getElementById('precio15').onchange = function()  {
-
-var cant15 = document.getElementById('cant15').value;
-var precio15 = document.getElementById('precio15').value;
-
-var tprecio15 = document.getElementById('tprecio15');
-
-tprecio15.value = cant15*precio15;
-
-};
-
 
 function total() {
 var tprecio1 = 0;
@@ -806,11 +557,7 @@ var tprecio7 = 0;
 var tprecio8 = 0;
 var tprecio9 = 0;
 var tprecio10 = 0;
-var tprecio11 = 0;
-var tprecio12 = 0;
-var tprecio13 = 0;
-var tprecio14 = 0;
-var tprecio15 = 0;
+
 
 //1
 if(document.getElementById('tprecio1').value > 0)
@@ -912,60 +659,10 @@ else
   tprecio10 = 0;
 }
 
-//11
-if((document.getElementById('tprecio11').value) > 0)
-{
-  tprecio11 = parseInt(document.getElementById('tprecio11').value);
-}
-else
-{
-  tprecio11 = 0;
-}
-
-//12
-if((document.getElementById('tprecio12').value) > 0)
-{
-  tprecio12 = parseInt(document.getElementById('tprecio12').value);
-}
-else
-{
-  tprecio12 = 0;
-}
-
-//13
-if((document.getElementById('tprecio13').value) > 0)
-{
-  tprecio13 = parseInt(document.getElementById('tprecio13').value);
-}
-else
-{
-  tprecio13 = 0;
-}
-
-//14
-if((document.getElementById('tprecio14').value) > 0)
-{
-  tprecio14 = parseInt(document.getElementById('tprecio14').value);
-}
-else
-{
-  tprecio14 = 0;
-}
-
-//15
-if((document.getElementById('tprecio15').value) > 0)
-{
-  tprecio15 = parseInt(document.getElementById('tprecio15').value);
-}
-else
-{
-  tprecio15 = 0;
-}
-
 
 Total = document.getElementById('Total');
 
-Total.value = tprecio1+tprecio2+tprecio3+tprecio4+tprecio5+tprecio6+tprecio7+tprecio8+tprecio9+tprecio10+tprecio11+tprecio12+tprecio13+tprecio14+tprecio15;
+Total.value = tprecio1+tprecio2+tprecio3+tprecio4+tprecio5+tprecio6+tprecio7+tprecio8+tprecio9+tprecio10;
 
 // alert(preciot);
 

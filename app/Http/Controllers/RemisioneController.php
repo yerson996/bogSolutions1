@@ -131,10 +131,14 @@ class RemisioneController extends Controller
      */
     public function destroy($id)
     {
-        $remisione = Remisione::find($id)->delete();
+        $remisione = Remisione::find($id);
+
+        $anular = 'Inactivo';
+
+        Remisione::where('id','=',$id)->update(["estado" => $anular]);
 
         return redirect()->route('remisiones.index')
-            ->with('success', 'Remision eliminada correctamente');
+            ->with('success', 'Remision Anulada correctamente correctamente');
     }
-    
+
 }

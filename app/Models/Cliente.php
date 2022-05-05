@@ -32,15 +32,6 @@ class Cliente extends Model
 		'persona' => 'required',
 		'tipoDoc' => 'required',
 		'id' => 'required',
-		'nombre1' => 'required',
-		'nombre2' => 'required',
-		'apellido1' => 'required',
-		'apellido2' => 'required',
-		'nombreLegal' => 'required',
-		'direccion' => 'required',
-		'ciudad' => 'required',
-		'cel' => 'required',
-		'correo' => 'required',
     ];
 
     protected $perPage = 20;
