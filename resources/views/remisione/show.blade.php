@@ -8,6 +8,7 @@
   -moz-border-radius: 20px;
   padding: 5px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .clase {
@@ -16,6 +17,7 @@
   border: 2px solid gray;
   border-radius: 2px;
   padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -29,6 +31,7 @@ float: left;
 width: 28%;
 margin-right: 0.5em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #col2 {
@@ -36,6 +39,7 @@ float: left;
 width: 20%;
 margin-right: 1em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #col3 {
@@ -43,6 +47,7 @@ float: right;
 width: 28%;
 margin-right: 0.5em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #col4 {
@@ -50,6 +55,7 @@ float: right;
 width: 20%;
 margin-right: 1em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #izq {
@@ -57,6 +63,7 @@ float: left;
 width: 48.5%;
 margin-right: 1em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #der {
@@ -64,6 +71,7 @@ float: right;
 width: 48.5%;
 margin-right: 1em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #izq1 {
@@ -72,6 +80,7 @@ font-size: 30px;
 font-weight: 1000;"
 margin-right: 1em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #der1 {
@@ -80,6 +89,7 @@ font-size: 30px;
 font-weight: 1000;"
 margin-right: 1em;
 margin-bottom: 1em;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #center
@@ -113,6 +123,7 @@ margin-bottom: 1em;
     text-align: center;
     width: "100%";
     background-color: #e6e6e6;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .tables td, .tables th {
@@ -121,6 +132,7 @@ margin-bottom: 1em;
   border-top: 1px solid #dee2e6;
   border-left: 1px solid #dee2e6;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -214,22 +226,23 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
 
             
             
+<body class="font-family: Arial, Helvetica, sans-serif;">
 
-
-            <table id="izq1" class="ini">
+            <table id="izq1">
                 <td>
                 <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>   
-                    <tr>
-                        <strong style="font-size: 25px;">REMISIÓN No. RM-{{$remisione->id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>
+                    <tr style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;">
+                    <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;&nbsp;REMISIÓN No. RM-{{$remisione->id}}&nbsp;&nbsp;&nbsp;<strong>
                     </tr>      
                 </td>
             </table>
 
-            <table id="der1" class="ini">
+            <table id="der1">
                 <td>
                 <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>
-                    <tr>
-                    REMISIÓN No. RM-{{$remisione->id}}
+                    <tr >
+                        
+                        <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REMISIÓN No. RM-{{$remisione->id}} <br> <strong>
                     </tr>   
                 </td>
             </table>
@@ -440,41 +453,6 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <td>{{ $remisione->tprecio10 }}</td>
                         </tr>
                         <tr>
-                            <td>{{ $I11 }}</td>
-                            <td>{{ $N11 }}</td>
-                            <td>{{ $remisione->cant11 }}</td>
-                            <td>{{ $remisione->precio11 }}</td>
-                            <td>{{ $remisione->tprecio11 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I12 }}</td>
-                            <td>{{ $N12 }}</td>
-                            <td>{{ $remisione->cant12 }}</td>
-                            <td>{{ $remisione->precio12 }}</td>
-                            <td>{{ $remisione->tprecio12 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I13 }}</td>
-                            <td>{{ $N13 }}</td>
-                            <td>{{ $remisione->cant13 }}</td>
-                            <td>{{ $remisione->precio13 }}</td>
-                            <td>{{ $remisione->tprecio13 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I14 }}</td>
-                            <td>{{ $N14 }}</td>
-                            <td>{{ $remisione->cant14 }}</td>
-                            <td>{{ $remisione->precio14 }}</td>
-                            <td>{{ $remisione->tprecio14 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I15 }}</td>
-                            <td>{{ $N15 }}</td>
-                            <td>{{ $remisione->cant15 }}</td>
-                            <td>{{ $remisione->precio15 }}</td>
-                            <td>{{ $remisione->tprecio15 }}</td>
-                        </tr>
-                        <tr>
                             <td colspan="2">Notas: </td>
                             <td id="first">Total</td>
                             <td colspan="2">${{ number_format($Total, 2) }}</td>
@@ -570,41 +548,6 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                             <td>{{ $remisione->tprecio10 }}</td>
                         </tr>
                         <tr>
-                            <td>{{ $I11 }}</td>
-                            <td>{{ $N11 }}</td>
-                            <td>{{ $remisione->cant11 }}</td>
-                            <td>{{ $remisione->precio11 }}</td>
-                            <td>{{ $remisione->tprecio11 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I12 }}</td>
-                            <td>{{ $N12 }}</td>
-                            <td>{{ $remisione->cant12 }}</td>
-                            <td>{{ $remisione->precio12 }}</td>
-                            <td>{{ $remisione->tprecio12 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I13 }}</td>
-                            <td>{{ $N13 }}</td>
-                            <td>{{ $remisione->cant13 }}</td>
-                            <td>{{ $remisione->precio13 }}</td>
-                            <td>{{ $remisione->tprecio13 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I14 }}</td>
-                            <td>{{ $N14 }}</td>
-                            <td>{{ $remisione->cant14 }}</td>
-                            <td>{{ $remisione->precio14 }}</td>
-                            <td>{{ $remisione->tprecio14 }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ $I15 }}</td>
-                            <td>{{ $N15 }}</td>
-                            <td>{{ $remisione->cant15 }}</td>
-                            <td>{{ $remisione->precio15 }}</td>
-                            <td>{{ $remisione->tprecio15 }}</td>
-                        </tr>
-                        <tr>
                             <td colspan="2">Notas: </td>
                             <td id="first">Total</td>
                             <td colspan="2">${{ number_format($Total, 2) }}</td>
@@ -620,6 +563,9 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
             </div>
             </div>
             </div>
+ 
+                
+            </body>
                 
 
     </section>

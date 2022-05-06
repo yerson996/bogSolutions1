@@ -34,7 +34,11 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+
+
+
+
+                            <table id="example" class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         
@@ -65,11 +69,27 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                <thead class="thead">
+                                    <tfoot> 
+                                    <tr>
+                                        
+										<th>Item</th>
+										<th>Nombre</th>
+										<th>Precio</th>
+
+                                        <th></th>
+                                    </tr>
+                                    
+                                    </tfoot>
+
+
                             </table>
+
+
+
                         </div>
                     </div>
                 </div>
-                {!! $productos->links() !!}
             </div>
         </div>
     </div>
@@ -80,5 +100,23 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+
+$(document).ready(function() {
+$('#example').DataTable({
+    "language": {
+        "search":   "Buscar",
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+        "paginate":{
+                "previous": "Anterior",
+                "next": "Siguiente",
+                "first": "Primero",
+                "last": "Ultimo"
+        }
+    }
+
+});
+} );
+</script>
 @stop

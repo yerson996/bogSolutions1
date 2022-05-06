@@ -28,10 +28,10 @@ class RemisioneController extends Controller
      */
     public function index()
     {
-        $remisiones = Remisione::paginate();
+        $remisiones = Remisione::paginate(750);
 
-        return view('remisione.index', compact('remisiones'))
-            ->with('i', (request()->input('page', 1) - 1) * $remisiones->perPage());
+        return view('remisione.index', compact('remisiones'));
+
     }
 
 

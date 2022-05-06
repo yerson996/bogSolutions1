@@ -33,18 +33,14 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id="cliente" class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                                 
 										<th>Persona</th>
 										<th>Tipo Doc.</th>
                                         <th>Doc.</th>
-										<th>Primer Nombre</th>
-										<th>Segundo Nombre</th>
-										<th>Primer Apellido</th>
-										<th>Segundo Apellido</th>
-										<th>Nombre legal</th>
+										<th>Nombre</th>
 										<th>Direccion</th>
 										<th>Ciudad</th>
 										<th>Celular</th>
@@ -60,11 +56,7 @@
 											<td>{{ $cliente->persona }}</td>
 											<td>{{ $cliente->tipoDoc }}</td>
                                             <td>{{ $cliente->id }}</td>
-											<td>{{ $cliente->nombre1 }}</td>
-											<td>{{ $cliente->nombre2 }}</td>
-											<td>{{ $cliente->apellido1 }}</td>
-											<td>{{ $cliente->apellido2 }}</td>
-											<td>{{ $cliente->nombreLegal }}</td>
+											<td>{{ $cliente->nombre1 }} {{ $cliente->nombre2 }} {{ $cliente->apellido1 }} {{ $cliente->apellido2 }} {{ $cliente->nombreLegal }} </td>
 											<td>{{ $cliente->direccion }}</td>
 											<td>{{ $cliente->ciudad }}</td>
 											<td>{{ $cliente->cel }}</td>
@@ -82,11 +74,26 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                <tfood class="thead">
+                                    <tr>
+                                                
+										<th>Persona</th>
+										<th>Tipo Doc.</th>
+                                        <th>Doc.</th>
+										<th>Nombre</th>
+										<th>Direccion</th>
+										<th>Ciudad</th>
+										<th>Celular</th>
+										<th>Correo</th>
+
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>
                 </div>
-                {!! $clientes->links() !!}
+                <!-- {!! $clientes->links() !!} -->
             </div>
         </div>
     </div>
@@ -98,5 +105,24 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+
+$(document).ready(function() {
+$('#cliente').DataTable({
+    "language": {
+        "search":   "Buscar",
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+        "paginate":{
+                "previous": "Anterior",
+                "next": "Siguiente",
+                "first": "Primero",
+                "last": "Ultimo"
+        }
+        
+    }    
+
+});
+} );
+</script>
 @stop
