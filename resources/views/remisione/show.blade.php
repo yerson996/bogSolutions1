@@ -232,7 +232,7 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                 <td>
                 <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>   
                     <tr style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;">
-                    <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;&nbsp;REMISIÓN No. RM-{{$remisione->id}}&nbsp;&nbsp;&nbsp;<strong>
+                    <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;   REMISIÓN No. RM-{{$remisione->id}}<strong>
                     </tr>      
                 </td>
             </table>
@@ -242,7 +242,7 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                 <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>
                     <tr >
                         
-                        <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REMISIÓN No. RM-{{$remisione->id}} <br> <strong>
+                        <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;&nbsp;&nbsp;REMISIÓN No. RM-{{$remisione->id}} <br> <strong>
                     </tr>   
                 </td>
             </table>
@@ -375,11 +375,11 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                 <table id="izq" class="clase tables" with="30%">
                 <thead>
                         <tr>
-                            <th id="first">Item</th>
-                            <th id="first">Descripción</th>
-                            <th id="first">Cant.</th>
-                            <th id="first">Valor U. Nto</th>
-                            <th id="first">Valor Total</th>
+                        <th id="first">ITEM</th>
+                            <th id="first">DESCRIPCIÓN</th>
+                            <th id="first">CANT.</th>
+                            <th id="first">VALOR U. NTO</th>
+                            <th id="first">VALOR TOTAL</th>
                         </tr>
                     </thead>
                         <tr>
@@ -470,11 +470,11 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                 <table id="der" class="clase tables" with="30%">
                 <thead>
                         <tr>
-                            <th id="first">Item</th>
-                            <th id="first">Descripción</th>
-                            <th id="first">Cant.</th>
-                            <th id="first">Valor U. Nto</th>
-                            <th id="first">Valor Total</th>
+                            <th id="first">ITEM</th>
+                            <th id="first">DESCRIPCIÓN</th>
+                            <th id="first">CANT.</th>
+                            <th id="first">VALOR U. NTO</th>
+                            <th id="first">VALOR TOTAL</th>
                         </tr>
                     </thead>
                         <tr>

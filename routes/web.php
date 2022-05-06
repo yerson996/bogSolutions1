@@ -59,8 +59,8 @@ Route::resource('remisiones', App\Http\Controllers\RemisioneController::class);
 
 
 
-Route::get('users/export/', [App\Http\Controllers\UsersController::class, 'export']);
+Route::get('/users/export/', [App\Http\Controllers\UsersController::class, 'export']);
 
-Route::get('prods/export/', [App\Http\Controllers\ProdsController::class, 'export']);
+Route::get('/prods/export/', [App\Http\Controllers\ProdsController::class, 'export']);
 
 
