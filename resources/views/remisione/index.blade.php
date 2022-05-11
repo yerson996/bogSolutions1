@@ -66,7 +66,6 @@
                                             <td>
                                                 <form action="{{ route('remisiones.destroy',$remisione->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary "  target="_blank" href="{{ route('remisiones.show',$remisione->id) }}"><i class="fa fa-fw fa-eye"></i>Imprimir</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('remisiones.edit',$remisione->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('¿Quieres Anular?')"><i class="fa fa-fw fa-ban"></i>Anular</button>

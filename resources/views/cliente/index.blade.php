@@ -44,7 +44,7 @@
 										<th>Direccion</th>
 										<th>Ciudad</th>
 										<th>Celular</th>
-										<th>Correo</th>
+										
 
                                         <th></th>
                                     </tr>
@@ -60,15 +60,15 @@
 											<td>{{ $cliente->direccion }}</td>
 											<td>{{ $cliente->ciudad }}</td>
 											<td>{{ $cliente->cel }}</td>
-											<td>{{ $cliente->correo }}</td>
+										
 
                                             <td>
                                                 <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Quieres Borrar?')"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Quieres Borrar?')"><i class="fa fa-fw fa-trash"></i> </button>
                                                 </form>
                                             </td>
                                         </tr>

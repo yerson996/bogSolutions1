@@ -1,22 +1,95 @@
+<style>
+    .form-contro {
+
+    width: 50%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+    .form-contr {
+
+    width: 70%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  .form-cant {
+
+    width: 33%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  .cont {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+</style>
+
 <div class="box box-info padding-1">
     <div class="box-body">
 
-        
+        <!-- Tipo de Persona -->
         <div class="form-group">
-            {{ Form::label('persona') }}
-            {{ Form::text('persona', $cliente->persona, ['class' => 'form-control' . ($errors->has('persona') ? ' is-invalid' : ''), 'placeholder' => 'Persona']) }}
-            {!! $errors->first('persona', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('tipoDoc') }}
-            {{ Form::text('tipoDoc', $cliente->tipoDoc, ['class' => 'form-control' . ($errors->has('tipoDoc') ? ' is-invalid' : ''), 'placeholder' => 'Tipodoc']) }}
-            {!! $errors->first('tipoDoc', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Documento') }}
-            {{ Form::text('id', $cliente->id, ['class' => 'form-control' . ($errors->has('id') ? ' is-invalid' : ''), 'placeholder' => 'Documento']) }}
+            {{ Form::label('Tipo de Persona y Documento') }}
+            <br>
+                <select class="form-cant" name="persona" id="persona">
+                    <option value="0" selected disabled>--Seleccione Tipo de Persona--</option>
+                    <option value="Natural" value="{{ isset($cliente->persona)?$cliente->persona:old('persona') }}" id="persona">Persona Natural</option>
+                    <option value="Juridica" value="{{ isset($cliente->persona)?$cliente->persona:old('persona') }}" id="persona">Persona Juridica</option>
+                </select>
+
+        <!-- Tipo de Documento  -->
+
+                <select class="form-cant" name="tipoDoc">
+                    <option value="0" selected disabled>--Seleccione Tipo de Documento--</option>
+                    <option value="CC" >Cedula de Ciudadania</option>
+                    <option value="NIT" >Número de Identificación Tributaria</option>
+                    <option value="CE" >Cedula Extranjera</option>
+                </select>
+
+
+        <!-- Documento -->
+
+            {{ Form::text('id', $cliente->id, ['class' => 'form-cant' . ($errors->has('id') ? ' is-invalid' : ''), 'placeholder' => 'Documento']) }}
             {!! $errors->first('id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
+
         <div class="form-group">
             {{ Form::label('nombre1') }}
             {{ Form::text('nombre1', $cliente->nombre1, ['class' => 'form-control' . ($errors->has('nombre1') ? ' is-invalid' : ''), 'placeholder' => 'Nombre1']) }}
@@ -65,7 +138,7 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </div>
 
