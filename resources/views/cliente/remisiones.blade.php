@@ -7,6 +7,15 @@
 @stop
 
 @section('content')
+
+<?php
+
+$remisiones = DB::table('remisiones')->get();
+
+?>
+
+{{$cliente->id}}
+
 <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -54,11 +63,12 @@
 
                                 <tbody>
                                     @foreach ($remisiones as $remisione)
+                                    @if($remisione->doc === $cliente->id)
                                         <tr>
                                             <td>RM-{{ $remisione->id }}</td>
                                             
 											<td>{{ $remisione->doc }}</td>
-											<td>{{ $remisione->created_at->format('d-m-Y') }}</td> 
+											<td>{{ $remisione->created_at }}</td> 
                                             
                                             <td>{{ $remisione->estado }}</td>
 
@@ -73,6 +83,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                    @endif
                                     @endforeach
                                 </tbody>
                                 <tfoot class="thead">
@@ -88,11 +99,10 @@
                             </tfoot>
 
                             </table>
-
                         </div>
                     </div>
                 </div>
-                {!! $remisiones->links() !!}
+                
             </div>
         </div>
     </div>

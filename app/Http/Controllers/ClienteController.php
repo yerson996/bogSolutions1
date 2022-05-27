@@ -106,4 +106,22 @@ class ClienteController extends Controller
         return redirect()->route('clientes.index')
             ->with('success', 'Cliente eliminado correctamente');
     }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @var array
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function remisiones($id)
+    {
+
+        $cliente = Cliente::find($id);
+
+        return view('cliente.remisiones', compact('cliente'));
+    
+    }
+
 }

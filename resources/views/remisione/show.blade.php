@@ -7,8 +7,9 @@
   border-radius: 15px;
   -moz-border-radius: 20px;
   padding: 5px;
-  text-align: center;
+  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 
 .clase {
@@ -17,8 +18,9 @@
   border: 2px solid gray;
   border-radius: 2px;
   padding: 5px;
+  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-
+  text-transform: uppercase;
 }
 
 .linea {
@@ -32,6 +34,7 @@ width: 28%;
 margin-right: 0.5em;
 margin-bottom: 1em;
 font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
 }
 
 #col2 {
@@ -40,6 +43,7 @@ width: 20%;
 margin-right: 1em;
 margin-bottom: 1em;
 font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
 }
 
 #col3 {
@@ -48,6 +52,7 @@ width: 28%;
 margin-right: 0.5em;
 margin-bottom: 1em;
 font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
 }
 
 #col4 {
@@ -56,6 +61,7 @@ width: 20%;
 margin-right: 1em;
 margin-bottom: 1em;
 font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
 }
 
 #izq {
@@ -64,6 +70,7 @@ width: 48.5%;
 margin-right: 1em;
 margin-bottom: 1em;
 font-family: Arial, Helvetica, sans-serif;
+font-size: 10px;
 }
 
 #der {
@@ -72,24 +79,30 @@ width: 48.5%;
 margin-right: 1em;
 margin-bottom: 1em;
 font-family: Arial, Helvetica, sans-serif;
+font-size: 10px;
 }
 
 #izq1 {
 float: left;
-font-size: 30px; 
-font-weight: 1000;"
-margin-right: 1em;
-margin-bottom: 1em;
+width: 48.5%;
+font-size: 20px; 
+font-weight: 600;
+text-align: center;
 font-family: Arial, Helvetica, sans-serif;
+margin-top: 35px;
+margin-bottom: 20px;
 }
 
 #der1 {
 float: right;
-font-size: 30px; 
-font-weight: 1000;"
-margin-right: 1em;
-margin-bottom: 1em;
+width: 48.5%;
+font-size: 20px; 
+font-weight: 600;
+margin-right: 0.5em;
+text-align: center;
 font-family: Arial, Helvetica, sans-serif;
+margin-top: 35px;
+margin-bottom: 20px;
 }
 
 #center
@@ -119,8 +132,8 @@ font-family: Arial, Helvetica, sans-serif;
 
 #first
 {
-    align: center;
-    text-align: center;
+    align: left;
+    text-align: left;
     width: "100%";
     background-color: #e6e6e6;
     font-family: Arial, Helvetica, sans-serif;
@@ -131,7 +144,7 @@ font-family: Arial, Helvetica, sans-serif;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
   border-left: 1px solid #dee2e6;
-  text-align: center;
+  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -228,29 +241,33 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
             
 <body class="font-family: Arial, Helvetica, sans-serif;">
 
-            <table id="izq1">
-                <td>
-                <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>   
-                    <tr style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;">
-                    <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;   REMISIÓN No. RM-{{$remisione->id}}<strong>
-                    </tr>      
-                </td>
-            </table>
 
-            <table id="der1">
-                <td>
-                <tr><img style="padding: 0px 0px 0px 2rem; width: 25%;" src="http://localhost:8000/logo.png"></tr>
-                    <tr >
-                        
-                        <strong style="font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> &nbsp;&nbsp;&nbsp;&nbsp;REMISIÓN No. RM-{{$remisione->id}} <br> <strong>
-                    </tr>   
-                </td>
-            </table>
+<table id="izq1">
+<tr>
+    <td style="width: 60%">
+        <img style="width: 300px; margin-left: 16%; margin-right: 30%;" src="http://localhost:8000/logo.png" align="middle">
+    </td>
+    <td style="width: 40%">
+        REMISIÓN <br> RM-{{$remisione->id}}
+    </td>
+</tr>
+</table>
 
-           
+<table id="der1">
+<tr>
+    <td style="width: 60%">
+        <img style="width: 300px; margin-left: 16%; margin-right: 30%;" src="http://localhost:8000/logo.png" align="middle">
+    </td>
+    <td style="width: 40%">
+        REMISIÓN <br> RM-{{$remisione->id}}
+    </td>
+</tr>
+</table>
 
 
-                    
+
+
+
 
         <div class="card-body">
             <div class="form-group">
@@ -383,86 +400,249 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                         </tr>
                     </thead>
                         <tr>
-                            <td>{{ $I1 }}</td>
+                        
+                            <td>&nbsp;{{ $I1 }}</td>
                             <td>{{ $N1 }}</td>
                             <td>{{ $remisione->cant1 }}</td>
-                            <td>{{ $remisione->precio1 }}</td>
-                            <td>{{ $remisione->tprecio1 }}</td>
+                            <?php
+                            if(isset($N1))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio1, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio1, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I2 }}</td>
+                            <td>&nbsp;{{ $I2 }}</td>
                             <td>{{ $N2 }}</td>
                             <td>{{ $remisione->cant2 }}</td>
-                            <td>{{ $remisione->precio2 }}</td>
-                            <td>{{ $remisione->tprecio2 }}</td>
+                            <?php
+                            if(isset($N2))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio2, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio2, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I3 }}</td>
+                            <td>&nbsp;{{ $I3 }}</td>
                             <td>{{ $N3 }}</td>
                             <td>{{ $remisione->cant3 }}</td>
-                            <td>{{ $remisione->precio3 }}</td>
-                            <td>{{ $remisione->tprecio3 }}</td>
+                            <?php
+                            if(isset($N3))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio3, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio3, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I4 }}</td>
+                            <td>&nbsp;{{ $I4 }}</td>
                             <td>{{ $N4 }}</td>
                             <td>{{ $remisione->cant4 }}</td>
-                            <td>{{ $remisione->precio4 }}</td>
-                            <td>{{ $remisione->tprecio4 }}</td>
+                            <?php
+                            if(isset($N4))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio4, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio4, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I5 }}</td>
+                            <td>&nbsp;{{ $I5 }}</td>
                             <td>{{ $N5 }}</td>
                             <td>{{ $remisione->cant5 }}</td>
-                            <td>{{ $remisione->precio5 }}</td>
-                            <td>{{ $remisione->tprecio5 }}</td>
+                            <?php
+                            if(isset($N5))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio5, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio5, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I6 }}</td>
+                            <td>&nbsp;{{ $I6 }}</td>
                             <td>{{ $N6 }}</td>
                             <td>{{ $remisione->cant6 }}</td>
-                            <td>{{ $remisione->precio6 }}</td>
-                            <td>{{ $remisione->tprecio6 }}</td>
+                            <?php
+                            if(isset($N6))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio6, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio6, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I7 }}</td>
+                            <td>&nbsp;{{ $I7 }}</td>
                             <td>{{ $N7 }}</td>
                             <td>{{ $remisione->cant7 }}</td>
-                            <td>{{ $remisione->precio7 }}</td>
-                            <td>{{ $remisione->tprecio7 }}</td>
+                            <?php
+                            if(isset($N7))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio7, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio7, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I8 }}</td>
+                            <td>&nbsp;{{ $I8 }}</td>
                             <td>{{ $N8 }}</td>
                             <td>{{ $remisione->cant8 }}</td>
-                            <td>{{ $remisione->precio8 }}</td>
-                            <td>{{ $remisione->tprecio8 }}</td>
+                            <?php
+                            if(isset($N8))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio8, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio8, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I9 }}</td>
+                            <td>&nbsp;{{ $I9 }}</td>
                             <td>{{ $N9 }}</td>
                             <td>{{ $remisione->cant9 }}</td>
-                            <td>{{ $remisione->precio9 }}</td>
-                            <td>{{ $remisione->tprecio9 }}</td>
+                            <?php
+                            if(isset($N9))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio9, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio9, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I10 }}</td>
+                            <td>&nbsp;{{ $I10 }}</td>
                             <td>{{ $N10 }}</td>
                             <td>{{ $remisione->cant10 }}</td>
-                            <td>{{ $remisione->precio10 }}</td>
-                            <td>{{ $remisione->tprecio10 }}</td>
+                            <?php
+                            if(isset($N10))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio10, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio10, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td colspan="2">Notas: </td>
-                            <td id="first">Total</td>
-                            <td colspan="2">${{ number_format($Total, 2) }}</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                     
+                        <tr>
+                            <td colspan="2"> <b> Notas: </b> </td>
+                            <td id="first"><b> Total </b></td>
+                            <td colspan="2"><b> ${{ number_format($Total, 2) }}</b></td>
                         </tr>
                         <tr>
                             <th colspan="2" style="height: 120px;">{{$remisione->notas}}</th>
                             <th colspan="4" style="height: 120px;">Recibido cliente:</th>
                         </tr>
                         <tr>
-                            <th colspan="10">GRACIAS POR CONFIAR EN NOSOTROS</th>
+                            <th style="text-align: center;" colspan="10">GRACIAS POR CONFIAR EN NOSOTROS</th>
                         </tr>
                     </table>
 
@@ -478,86 +658,247 @@ $Total=$P1+$P2+$P3+$P4+$P5+$P6+$P7+$P8+$P9+$P10+$P11+$P12+$P13+$P14+$P15;
                         </tr>
                     </thead>
                         <tr>
-                            <td>{{ $I1 }}</td>
+                        <td>&nbsp;{{ $I1 }}</td>
                             <td>{{ $N1 }}</td>
                             <td>{{ $remisione->cant1 }}</td>
-                            <td>{{ $remisione->precio1 }}</td>
-                            <td>{{ $remisione->tprecio1 }}</td>
+                            <?php
+                            if(isset($N1))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio1, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio1, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I2 }}</td>
+                            <td>&nbsp;{{ $I2 }}</td>
                             <td>{{ $N2 }}</td>
                             <td>{{ $remisione->cant2 }}</td>
-                            <td>{{ $remisione->precio2 }}</td>
-                            <td>{{ $remisione->tprecio2 }}</td>
+                            <?php
+                            if(isset($N2))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio2, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio2, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I3 }}</td>
+                            <td>&nbsp;{{ $I3 }}</td>
                             <td>{{ $N3 }}</td>
                             <td>{{ $remisione->cant3 }}</td>
-                            <td>{{ $remisione->precio3 }}</td>
-                            <td>{{ $remisione->tprecio3 }}</td>
+                            <?php
+                            if(isset($N3))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio3, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio3, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I4 }}</td>
+                            <td>&nbsp;{{ $I4 }}</td>
                             <td>{{ $N4 }}</td>
                             <td>{{ $remisione->cant4 }}</td>
-                            <td>{{ $remisione->precio4 }}</td>
-                            <td>{{ $remisione->tprecio4 }}</td>
+                            <?php
+                            if(isset($N4))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio4, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio4, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I5 }}</td>
+                            <td>&nbsp;{{ $I5 }}</td>
                             <td>{{ $N5 }}</td>
                             <td>{{ $remisione->cant5 }}</td>
-                            <td>{{ $remisione->precio5 }}</td>
-                            <td>{{ $remisione->tprecio5 }}</td>
+                            <?php
+                            if(isset($N5))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio5, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio5, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I6 }}</td>
+                            <td>&nbsp;{{ $I6 }}</td>
                             <td>{{ $N6 }}</td>
                             <td>{{ $remisione->cant6 }}</td>
-                            <td>{{ $remisione->precio6 }}</td>
-                            <td>{{ $remisione->tprecio6 }}</td>
+                            <?php
+                            if(isset($N6))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio6, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio6, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I7 }}</td>
+                            <td>&nbsp;{{ $I7 }}</td>
                             <td>{{ $N7 }}</td>
                             <td>{{ $remisione->cant7 }}</td>
-                            <td>{{ $remisione->precio7 }}</td>
-                            <td>{{ $remisione->tprecio7 }}</td>
+                            <?php
+                            if(isset($N7))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio7, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio7, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I8 }}</td>
+                            <td>&nbsp;{{ $I8 }}</td>
                             <td>{{ $N8 }}</td>
                             <td>{{ $remisione->cant8 }}</td>
-                            <td>{{ $remisione->precio8 }}</td>
-                            <td>{{ $remisione->tprecio8 }}</td>
+                            <?php
+                            if(isset($N8))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio8, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio8, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I9 }}</td>
+                            <td>&nbsp;{{ $I9 }}</td>
                             <td>{{ $N9 }}</td>
                             <td>{{ $remisione->cant9 }}</td>
-                            <td>{{ $remisione->precio9 }}</td>
-                            <td>{{ $remisione->tprecio9 }}</td>
+                            <?php
+                            if(isset($N9))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio9, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio9, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td>{{ $I10 }}</td>
+                            <td>&nbsp;{{ $I10 }}</td>
                             <td>{{ $N10 }}</td>
                             <td>{{ $remisione->cant10 }}</td>
-                            <td>{{ $remisione->precio10 }}</td>
-                            <td>{{ $remisione->tprecio10 }}</td>
+                            <?php
+                            if(isset($N10))
+                            {
+                            ?>
+                            <td> $ {{ number_format( $remisione->precio10, 2) }}</td>
+                            <td> $ {{ number_format( $remisione->tprecio10, 2) }}</td>   
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td> 
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
-                            <td colspan="2">Notas: </td>
-                            <td id="first">Total</td>
-                            <td colspan="2">${{ number_format($Total, 2) }}</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> <b> Notas: </b> </td>
+                            <td id="first"><b> Total </b></td>
+                            <td colspan="2"><b> ${{ number_format($Total, 2) }} </b></td>
                         </tr>
                         <tr>
                             <th colspan="2" style="height: 120px;">{{$remisione->notas}}</th>
                             <th colspan="4" style="height: 120px;">Recibido cliente:</th>
                         </tr>
                         <tr>
-                            <th colspan="10">GRACIAS POR CONFIAR EN NOSOTROS</th>
+                            <th style="text-align: center;" colspan="10">GRACIAS POR CONFIAR EN NOSOTROS</th>
                         </tr>
                     </table>
             </div>
