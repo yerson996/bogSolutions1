@@ -122,7 +122,6 @@ $('#cliente').DataTable({
         }
         
     }    
-
 });
 } );
 </script>
