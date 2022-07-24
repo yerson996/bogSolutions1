@@ -33,15 +33,16 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            
-                        
-                        
-                        
-                        
-                        
+
+
+
+
+
+
                         <table id="example" class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
+                                        <th width="1px"></th>
                                         <th>No Remisión</th>
 										<th>Documento del Cliente</th>
 
@@ -55,15 +56,15 @@
                                 <tbody>
                                     @foreach ($remisiones as $remisione)
                                         <tr>
-                                            <td>RM-{{ $remisione->id }}</td>
-                                            
+                                            <td>RM-</td>
+                                            <td>{{ $remisione->id }}</td>
 											<td>{{ $remisione->doc }}</td>
-											<td>{{ $remisione->created_at->format('d-m-Y') }}</td> 
-                                            
+											<td>{{ $remisione->created_at->format('d-m-Y') }}</td>
+
                                             <td>{{ $remisione->estado }}</td>
 
 
-                                        
+
                                             <td>
                                                 <form action="{{ route('remisiones.destroy',$remisione->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary "  target="_blank" href="{{ route('remisiones.show',$remisione->id) }}"><i class="fa fa-fw fa-eye"></i>Imprimir</a>
@@ -77,10 +78,11 @@
                                 </tbody>
                                 <tfoot class="thead">
                                     <tr>
+                                        <th width="1px"></th>
                                         <th>No Remisión</th>
 										<th>Documento del Cliente</th>
 
-										<th>Notas</th>
+										<th>Fecha</th>
 										<th>Estado</th>
 
                                         <th></th>
@@ -97,7 +99,7 @@
         </div>
     </div>
 
-    
+
 @stop
 
 @section('css')
@@ -109,6 +111,8 @@
 
     $(document).ready(function() {
     $('#example').DataTable({
+
+        "order": [[1,'DESC']],
         "language": {
             "search":   "Buscar",
             "lengthMenu": "Mostrar _MENU_ registros por pagina",
@@ -121,7 +125,8 @@
             }
         }
 
-    });
+
+    } );
 } );
 	</script>
 @stop
